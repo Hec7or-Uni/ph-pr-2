@@ -6,6 +6,7 @@
 
 #include <inttypes.h>
 #include "celda.h"
+#include "utils.h"
 
 // La representación del tablero en memoria es
 // 0 C1 C2 C3 C4 C5 C6 C7
@@ -27,11 +28,6 @@ enum {	NUM_FILAS = 6,
       	NUM_COLUMNAS = 7,
       	PADDING_COL = 1,
 		TAM_COLS = PADDING_COL + NUM_COLUMNAS };
-
-/* Definiciones para valores muy utilizados */
-enum {	FALSE = 0,
-      	TRUE = 1,
-      	ERROR = 0xFF };
 
 /* *****************************************************************************
  * declaracion de funciones visibles en el exterior conecta4_

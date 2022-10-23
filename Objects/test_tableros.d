@@ -3,4 +3,5 @@
 .\objects\test_tableros.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\test_tableros.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\test_tableros.o: celda.h
+.\objects\test_tableros.o: utils.h
 .\objects\test_tableros.o: tableros.h

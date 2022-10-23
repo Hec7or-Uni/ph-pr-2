@@ -3,5 +3,8 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: celda.h
+.\objects\main.o: utils.h
 .\objects\main.o: entrada.h
 .\objects\main.o: test_tableros.h
+.\objects\main.o: temporizador.h
+.\objects\main.o: C:\Keil_v5\ARM\INC\Philips\LPC210x.H

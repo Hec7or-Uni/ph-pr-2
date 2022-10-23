@@ -1,45 +1,52 @@
 Dependencies for Project 'conecta4_2022', Target 'Target 1': (DO NOT MODIFY !)
-F (.\Startup.s)(0x634EC5E1)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\startup.lst --xref -o .\objects\startup.o --depend .\objects\startup.d)
-F (.\conecta4_hay_linea_arm_arm.s)(0x634EC5E1)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\conecta4_hay_linea_arm_arm.lst --xref -o .\objects\conecta4_hay_linea_arm_arm.o --depend .\objects\conecta4_hay_linea_arm_arm.d)
-F (.\conecta4_hay_linea_arm_c.s)(0x634EC5E1)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\conecta4_hay_linea_arm_c.lst --xref -o .\objects\conecta4_hay_linea_arm_c.o --depend .\objects\conecta4_hay_linea_arm_c.d)
-F (.\conecta4_buscar_alineamiento_arm.s)(0x634EC5E1)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\conecta4_buscar_alineamiento_arm.lst --xref -o .\objects\conecta4_buscar_alineamiento_arm.o --depend .\objects\conecta4_buscar_alineamiento_arm.d)
-F (.\celda.h)(0x634EC5E1)()
-F (.\conecta4_2022.h)(0x634EC5E1)()
-F (.\tableros.h)(0x634EC5E1)()
-F (.\entrada.h)(0x634EC5E1)()
-F (.\test_tableros.h)(0x634EC5E1)()
-F (.\cola_asyn.h)(0x634ECF09)()
-F (.\temporizador.h)(0x634EDCC0)()
-F (.\conecta4_2022.c)(0x6354EF95)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O2 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\conecta4_2022.o --omf_browse .\objects\conecta4_2022.crf --depend .\objects\conecta4_2022.d)
-I (conecta4_2022.h)(0x634EC5E1)
-I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
-I (celda.h)(0x634EC5E1)
-I (entrada.h)(0x634EC5E1)
-I (tableros.h)(0x634EC5E1)
-F (.\main.c)(0x634EC5E1)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O2 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (conecta4_2022.h)(0x634EC5E1)
-I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
-I (celda.h)(0x634EC5E1)
-I (entrada.h)(0x634EC5E1)
-I (test_tableros.h)(0x634EC5E1)
-F (.\entrada.c)(0x634EC5E1)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O2 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\entrada.o --omf_browse .\objects\entrada.crf --depend .\objects\entrada.d)
-I (entrada.h)(0x634EC5E1)
-I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
-F (.\test_tableros.c)(0x634EC5E1)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O2 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\test_tableros.o --omf_browse .\objects\test_tableros.crf --depend .\objects\test_tableros.d)
-I (conecta4_2022.h)(0x634EC5E1)
-I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
-I (celda.h)(0x634EC5E1)
-I (tableros.h)(0x634EC5E1)
-F (.\cola_asyn.c)(0x634ECD3B)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O2 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\cola_asyn.o --omf_browse .\objects\cola_asyn.crf --depend .\objects\cola_asyn.d)
-I (cola_asyn.h)(0x634ECF09)
-I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
-F (.\temporizador.c)(0x634EE8C8)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O2 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\temporizador.o --omf_browse .\objects\temporizador.crf --depend .\objects\temporizador.d)
-I (temporizador.h)(0x634EDCC0)
-I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
-I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
+F (.\Startup.s)(0x63554E6D)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\startup.lst --xref -o .\objects\startup.o --depend .\objects\startup.d)
+F (.\conecta4_hay_linea_arm_arm.s)(0x63554E6D)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\conecta4_hay_linea_arm_arm.lst --xref -o .\objects\conecta4_hay_linea_arm_arm.o --depend .\objects\conecta4_hay_linea_arm_arm.d)
+F (.\conecta4_hay_linea_arm_c.s)(0x63554E6D)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\conecta4_hay_linea_arm_c.lst --xref -o .\objects\conecta4_hay_linea_arm_c.o --depend .\objects\conecta4_hay_linea_arm_c.d)
+F (.\conecta4_buscar_alineamiento_arm.s)(0x63554E6D)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\conecta4_buscar_alineamiento_arm.lst --xref -o .\objects\conecta4_buscar_alineamiento_arm.o --depend .\objects\conecta4_buscar_alineamiento_arm.d)
+F (.\celda.h)(0x63554E6D)()
+F (.\conecta4_2022.h)(0x6355554B)()
+F (.\tableros.h)(0x63554E6D)()
+F (.\entrada.h)(0x63554E6D)()
+F (.\test_tableros.h)(0x63554E6D)()
+F (.\cola_asyn.h)(0x63556CE7)()
+F (.\temporizador.h)(0x63556D7E)()
+F (.\utils.h)(0x63556D23)()
+F (.\conecta4_2022.c)(0x63554E6D)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\conecta4_2022.o --omf_browse .\objects\conecta4_2022.crf --depend .\objects\conecta4_2022.d)
+I (conecta4_2022.h)(0x6355554B)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F3DAE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F3DAE)
+I (celda.h)(0x63554E6D)
+I (utils.h)(0x63556D23)
+I (entrada.h)(0x63554E6D)
+I (tableros.h)(0x63554E6D)
+F (.\main.c)(0x63556D1B)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (conecta4_2022.h)(0x6355554B)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F3DAE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F3DAE)
+I (celda.h)(0x63554E6D)
+I (utils.h)(0x63556D23)
+I (entrada.h)(0x63554E6D)
+I (test_tableros.h)(0x63554E6D)
+I (temporizador.h)(0x63556D7E)
+I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D3D78)
+F (.\entrada.c)(0x63554E6D)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\entrada.o --omf_browse .\objects\entrada.crf --depend .\objects\entrada.d)
+I (entrada.h)(0x63554E6D)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F3DAE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F3DAE)
+F (.\test_tableros.c)(0x63554E6D)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\test_tableros.o --omf_browse .\objects\test_tableros.crf --depend .\objects\test_tableros.d)
+I (conecta4_2022.h)(0x6355554B)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F3DAE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F3DAE)
+I (celda.h)(0x63554E6D)
+I (utils.h)(0x63556D23)
+I (tableros.h)(0x63554E6D)
+F (.\cola_asyn.c)(0x63555CEE)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\cola_asyn.o --omf_browse .\objects\cola_asyn.crf --depend .\objects\cola_asyn.d)
+I (cola_asyn.h)(0x63556CE7)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F3DAE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F3DAE)
+I (utils.h)(0x63556D23)
+F (.\temporizador.c)(0x6355A045)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\temporizador.o --omf_browse .\objects\temporizador.crf --depend .\objects\temporizador.d)
+I (temporizador.h)(0x63556D7E)
+I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D3D78)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F3DAE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F3DAE)
