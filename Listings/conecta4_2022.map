@@ -548,17 +548,17 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1168         24          0         64          0      13011   conecta4_2022.o
-       116          0          0          0          0        316   conecta4_buscar_alineamiento_arm.o
-       348          4          0          0          0        360   conecta4_hay_linea_arm_arm.o
-       192          4          0          0          0        316   conecta4_hay_linea_arm_c.o
-        32          0          0          0          0       1757   entrada.o
-        12          0          0          0          0        411   main.o
-        32         12          0          0       1160        276   startup.o
-       964        100        168          3          0       4961   test_tableros.o
+      1168         24          0         64          0      12899   conecta4_2022.o
+       116          0          0          0          0        300   conecta4_buscar_alineamiento_arm.o
+       348          4          0          0          0        348   conecta4_hay_linea_arm_arm.o
+       192          4          0          0          0        300   conecta4_hay_linea_arm_c.o
+        32          0          0          0          0       1701   entrada.o
+        12          0          0          0          0        395   main.o
+        32         12          0          0       1160        260   startup.o
+       964        100        168          3          0       4889   test_tableros.o
 
     ----------------------------------------------------------------------
-      2864        144        200         68       1160      21408   Object Totals
+      2864        144        200         68       1160      21092   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          1          0          0   (incl. Padding)
 
@@ -607,8 +607,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3292        164        200         68       1260      21460   Grand Totals
-      3292        164        200         68       1260      21460   ELF Image Totals
+      3292        164        200         68       1260      21144   Grand Totals
+      3292        164        200         68       1260      21144   ELF Image Totals
       3292        164        200         68          0          0   ROM Totals
 
 ==============================================================================

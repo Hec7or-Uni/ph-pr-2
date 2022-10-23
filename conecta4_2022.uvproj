@@ -471,6 +471,16 @@
               <FileType>5</FileType>
               <FilePath>.\test_tableros.h</FilePath>
             </File>
+            <File>
+              <FileName>cola_asyn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\cola_asyn.h</FilePath>
+            </File>
+            <File>
+              <FileName>temporizador.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\temporizador.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -495,6 +505,16 @@
               <FileName>test_tableros.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\test_tableros.c</FilePath>
+            </File>
+            <File>
+              <FileName>cola_asyn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cola_asyn.c</FilePath>
+            </File>
+            <File>
+              <FileName>temporizador.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\temporizador.c</FilePath>
             </File>
           </Files>
         </Group>
