@@ -1,5 +1,7 @@
 #include <LPC210x.H> /* LPC210x definitions */
 #include <inttypes.h>
+#include "cola_asyn.h"
+#include "eventos.h"
 
 /**
  * @brief Programa un contador para que pueda ser utilizado.

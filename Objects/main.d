@@ -8,3 +8,5 @@
 .\objects\main.o: test_tableros.h
 .\objects\main.o: temporizador.h
 .\objects\main.o: C:\Keil_v5\ARM\INC\Philips\LPC210x.H
+.\objects\main.o: cola_asyn.h
+.\objects\main.o: eventos.h
