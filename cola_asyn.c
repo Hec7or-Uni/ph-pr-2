@@ -28,21 +28,21 @@ void cola_encolar_eventos(uint8_t ID_evento, uint32_t veces, uint32_t auxData)
   }
 }
 
-cola_asyn cola_desencolar_eventos(void)
+evento_info cola_desencolar_eventos(void)
 {
-  cola_asyn cola;
+  evento_info evento;
 	
   if (first == COLA_SIZE)
   {
     first = 0;
   }
 
-  cola.veces = colaVECES[first];
-  cola.auxData = colaDATA[first];
-  cola.ID_evento = colaID[first];
+  evento.veces = colaVECES[first];
+  evento.auxData = colaDATA[first];
+  evento.ID_evento = colaID[first];
   first++;
   full = FALSE;
-  return cola;
+  return evento;
 }
 
 int cola_hay_eventos(void)

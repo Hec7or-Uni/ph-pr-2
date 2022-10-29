@@ -11,7 +11,7 @@ typedef struct
   uint32_t veces;
   uint32_t auxData;
   uint8_t ID_evento;
-} cola_asyn;
+} evento_info;
 
 /**
  * @brief  Funcion que encola un evento a la cola de eventos
@@ -21,11 +21,26 @@ void cola_encolar_eventos(uint8_t ID_evento, uint32_t veces, uint32_t auxData);
 /**
  * @brief  Funcion que desencola un evento de la cola de eventos
  */
-cola_asyn cola_desencolar_eventos(void);
+evento_info cola_desencolar_eventos(void);
 
 /**
  * @brief  Funcion que comprueba si hay eventos
  */
 int cola_hay_eventos(void);
+
+/**
+ * @brief  Funcion que encola un mensaje a la cola de eventos
+ */
+void cola_encolar_msg(uint8_t ID_msg, uint32_t veces, uint32_t auxData);
+
+/**
+ * @brief  Funcion que desencola un mensaje de la cola de eventos
+ */
+evento_info cola_desencolar_msg(void);
+
+/**
+ * @brief  Funcion que comprueba si hay mensajes
+ */
+int cola_hay_msg(void);
 
 #endif
