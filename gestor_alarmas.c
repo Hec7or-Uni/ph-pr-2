@@ -57,7 +57,14 @@ void ga_comprobar_alarmas() {
         //¿Tiene que poner algún mensaje especifico?
         cola_encolar_msg(ga_id_msg(alarmas[i]),0);
     }
+    //¿Quieren que lo pongamos en el planificador o dentro del gestor?
+    temporizador_reloj(1);
 }
+
+void ga_iniciar(void) {
+    temporizador_reloj(1);
+}
+
 /* ESTRUCTURA PLANIFICADOR
 void kk() {
 

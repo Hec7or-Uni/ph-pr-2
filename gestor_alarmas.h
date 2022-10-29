@@ -3,6 +3,7 @@
 #include <inttypes.h>
 #include "utils.h"
 #include "cola_msg.h"
+#include "temporizador.h"
 
 enum {
     NUM_ALARMAS = 8
@@ -48,5 +49,10 @@ void ga_programar_alarma(uint32_t aux_data);
  * @brief 
  */
 void ga_comprobar_alarmas(void);
+
+/**
+ * @brief 
+ */
+void ga_iniciar(void);
 
 #endif
