@@ -2,7 +2,7 @@
 #define EVENTOS_H
 
 enum {
-  TIMER_EVENT
+  Timer_Event
 };
 
 #endif

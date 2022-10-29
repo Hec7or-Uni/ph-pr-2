@@ -461,6 +461,16 @@
               <FileType>1</FileType>
               <FilePath>.\test_tableros.c</FilePath>
             </File>
+            <File>
+              <FileName>cola_msg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cola_msg.c</FilePath>
+            </File>
+            <File>
+              <FileName>gestor_alarmas.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\gestor_alarmas.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -510,6 +520,21 @@
               <FileName>eventos.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\eventos.h</FilePath>
+            </File>
+            <File>
+              <FileName>cola_msg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\cola_msg.h</FilePath>
+            </File>
+            <File>
+              <FileName>gestor_alarmas.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\gestor_alarmas.h</FilePath>
+            </File>
+            <File>
+              <FileName>msg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\msg.h</FilePath>
             </File>
           </Files>
         </Group>

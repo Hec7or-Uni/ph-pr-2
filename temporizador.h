@@ -15,17 +15,19 @@ void temporizador_empezar(void);
 
 /**
  * @brief Lee el tiempo que lleva contando el contador desde la última vez que se ejecutó
- * temporizador_empezar y lo devuelve en microsegundos.
+ * temporizador_empezar y lo devuelve en microsegundos (us).
+ * @return Tiempo en microsegundos (us).
  */
 uint32_t temporizador_leer(void);
 
 /**
  * @brief Detiene el contador y devuelve el tiempo transcurrido desde temporizador_empezar
+ * @return Tiempo en microsegundos (us).
  */
 uint32_t temporizador_parar(void);
 
 /**
- * @brief Programa el reloj para que encole un evento periódicamente. El periodo se indica en ms.
- * @param periodo Periodo en ms.
+ * @brief Programa el reloj para que encole un evento periódicamente. El periodo se indica en milisegundos (ms).
+ * @param periodo Periodo en milisegundos (ms).
  */
 void temporizador_reloj(int periodo);

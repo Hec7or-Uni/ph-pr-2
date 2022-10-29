@@ -13,7 +13,8 @@ void timer0_IRC(void) __irq;
 
 void timer0_IRC(void) __irq
 {
-	cola_encolar_eventos(TIMER_EVENT, 1, 0);
+	static veces = 0;
+	cola_encolar_eventos(TIMER_EVENT, ++veces, 0);
 	T0TCR = T0TCR & ~0x1; // detiene el contador
 	T0PC = 0;
 	T0TC = 0;
