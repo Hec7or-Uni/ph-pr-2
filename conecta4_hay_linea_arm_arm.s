@@ -3,7 +3,7 @@
 	PRESERVE8 {TRUE}
 NUM_COLUMNAS	EQU 7
 NUM_FILAS		EQU 6
-	ENTRY
+	ENTRY 
 	
 ;r0 <- cuadricula
 ;r1 <- fila

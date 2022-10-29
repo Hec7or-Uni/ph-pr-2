@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>Target 1</TargetName>
+      <TargetName>conecta4_2022</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
@@ -53,7 +53,7 @@
           <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\Listings\</ListingPath>
+          <ListingPath>.\Listing\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -104,7 +104,7 @@
           <StopOnExitCode>3</StopOnExitCode>
           <CustomArgument></CustomArgument>
           <IncludeLibraryModules></IncludeLibraryModules>
-          <ComprImg>1</ComprImg>
+          <ComprImg>0</ComprImg>
         </CommonProperty>
         <DllOption>
           <SimDllName>SARM.DLL</SimDllName>
@@ -134,19 +134,19 @@
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
+            <RestoreSysVw>0</RestoreSysVw>
           </Simulator>
           <Target>
             <UseTarget>0</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
+            <RestoreWatchpoints>0</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
-            <RestoreTracepoints>1</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>
+            <RestoreTracepoints>0</RestoreTracepoints>
+            <RestoreSysVw>0</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
           <TargetSelection>0</TargetSelection>
@@ -169,15 +169,15 @@
         <Utilities>
           <Flash1>
             <UseTargetDll>1</UseTargetDll>
-            <UseExternalTool>1</UseExternalTool>
+            <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
-            <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
+            <UpdateFlashBeforeDebugging>0</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
-          <bUseTDR>1</bUseTDR>
+          <bUseTDR>0</bUseTDR>
           <Flash2>BIN\UL2ARM.DLL</Flash2>
-          <Flash3>LPC210x_ISP.EXE ("#H" ^X $D COM1: 9600 1)</Flash3>
+          <Flash3>"LPC210x_ISP.EXE" ("#H" ^X $D COM1: 9600 1)</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -198,11 +198,11 @@
             <ldmm>1</ldmm>
             <ldXref>1</ldXref>
             <BigEnd>0</BigEnd>
-            <AdsALst>1</AdsALst>
+            <AdsALst>0</AdsALst>
             <AdsACrf>1</AdsACrf>
             <AdsANop>0</AdsANop>
             <AdsANot>0</AdsANot>
-            <AdsLLst>1</AdsLLst>
+            <AdsLLst>0</AdsLLst>
             <AdsLmap>1</AdsLmap>
             <AdsLcgr>1</AdsLcgr>
             <AdsLsym>1</AdsLsym>
@@ -350,11 +350,11 @@
             <RvctStartVector></RvctStartVector>
           </ArmAdsMisc>
           <Cads>
-            <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>1</oTime>
+            <interw>0</interw>
+            <Optim>4</Optim>
+            <oTime>0</oTime>
             <SplitLS>0</SplitLS>
-            <OneElfS>1</OneElfS>
+            <OneElfS>0</OneElfS>
             <Strict>0</Strict>
             <EnumInt>0</EnumInt>
             <PlainCh>0</PlainCh>
@@ -364,12 +364,12 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
-            <uGnu>1</uGnu>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>1</v6Lang>
-            <v6LangP>1</v6LangP>
-            <vShortEn>1</vShortEn>
-            <vShortWch>1</vShortWch>
+            <v6Lang>0</v6Lang>
+            <v6LangP>0</v6LangP>
+            <vShortEn>0</vShortEn>
+            <vShortWch>0</vShortWch>
             <v6Lto>0</v6Lto>
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
@@ -381,7 +381,7 @@
             </VariousControls>
           </Cads>
           <Aads>
-            <interw>1</interw>
+            <interw>0</interw>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <thumb>0</thumb>
@@ -399,7 +399,7 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>0</umfTarg>
+            <umfTarg>1</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
@@ -411,7 +411,7 @@
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc></Misc>
+            <Misc>--entry 0x0</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>
@@ -419,12 +419,107 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Assembly</GroupName>
+          <GroupName>Startup Code</GroupName>
           <Files>
             <File>
               <FileName>Startup.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\Startup.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Source Code</GroupName>
+          <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>cola_asyn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cola_asyn.c</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_2022.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\conecta4_2022.c</FilePath>
+            </File>
+            <File>
+              <FileName>entrada.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\entrada.c</FilePath>
+            </File>
+            <File>
+              <FileName>temporizador.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\temporizador.c</FilePath>
+            </File>
+            <File>
+              <FileName>test_tableros.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\test_tableros.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Headers</GroupName>
+          <Files>
+            <File>
+              <FileName>celda.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\celda.h</FilePath>
+            </File>
+            <File>
+              <FileName>cola_asyn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\cola_asyn.h</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_2022.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\conecta4_2022.h</FilePath>
+            </File>
+            <File>
+              <FileName>entrada.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\entrada.h</FilePath>
+            </File>
+            <File>
+              <FileName>utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\utils.h</FilePath>
+            </File>
+            <File>
+              <FileName>tableros.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tableros.h</FilePath>
+            </File>
+            <File>
+              <FileName>temporizador.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\temporizador.h</FilePath>
+            </File>
+            <File>
+              <FileName>test_tableros.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\test_tableros.h</FilePath>
+            </File>
+            <File>
+              <FileName>eventos.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\eventos.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Assembly Code</GroupName>
+          <Files>
+            <File>
+              <FileName>conecta4_buscar_alineamiento_arm.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_buscar_alineamiento_arm.s</FilePath>
             </File>
             <File>
               <FileName>conecta4_hay_linea_arm_arm.s</FileName>
@@ -435,96 +530,6 @@
               <FileName>conecta4_hay_linea_arm_c.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\conecta4_hay_linea_arm_c.s</FilePath>
-            </File>
-            <File>
-              <FileName>conecta4_buscar_alineamiento_arm.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\conecta4_buscar_alineamiento_arm.s</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Includes</GroupName>
-          <Files>
-            <File>
-              <FileName>celda.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\celda.h</FilePath>
-            </File>
-            <File>
-              <FileName>conecta4_2022.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\conecta4_2022.h</FilePath>
-            </File>
-            <File>
-              <FileName>tableros.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\tableros.h</FilePath>
-            </File>
-            <File>
-              <FileName>entrada.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\entrada.h</FilePath>
-            </File>
-            <File>
-              <FileName>test_tableros.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\test_tableros.h</FilePath>
-            </File>
-            <File>
-              <FileName>cola_asyn.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\cola_asyn.h</FilePath>
-            </File>
-            <File>
-              <FileName>temporizador.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\temporizador.h</FilePath>
-            </File>
-            <File>
-              <FileName>utils.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\utils.h</FilePath>
-            </File>
-            <File>
-              <FileName>eventos.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\eventos.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Sources</GroupName>
-          <Files>
-            <File>
-              <FileName>conecta4_2022.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\conecta4_2022.c</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>entrada.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\entrada.c</FilePath>
-            </File>
-            <File>
-              <FileName>test_tableros.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\test_tableros.c</FilePath>
-            </File>
-            <File>
-              <FileName>cola_asyn.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\cola_asyn.c</FilePath>
-            </File>
-            <File>
-              <FileName>temporizador.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\temporizador.c</FilePath>
             </File>
           </Files>
         </Group>
