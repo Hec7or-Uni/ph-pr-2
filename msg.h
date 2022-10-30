@@ -1,6 +1,6 @@
 #ifndef MSG_H
 #define MSG_H
 
-enum { Set_Alarm };
+enum Messages { Set_Alarm };
 
 #endif

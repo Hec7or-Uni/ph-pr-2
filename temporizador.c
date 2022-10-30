@@ -12,8 +12,9 @@
 void timer0_IRC(void) __irq;
 
 void timer0_IRC(void) __irq {
-  static veces = 0;
-  cola_encolar_eventos(TIMER_EVENT, ++veces, 0);
+  static int veces = 0;
+  uint8_t evento = Timer_Event;
+  cola_encolar_eventos(evento, ++veces, 0);
   T0TCR = T0TCR & ~0x1;  // detiene el contador
   T0PC = 0;
   T0TC = 0;

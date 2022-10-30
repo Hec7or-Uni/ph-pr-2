@@ -1,6 +1,9 @@
 #ifndef GPIO_H
 #define GPIO_H
 
+#include <LPC210X.H>
+#include <inttypes.h>
+
 /**
  * @brief Permite emplear el GPIO y debe ser invocada antes de poder llamar
  * al resto de funciones de la biblioteca.
@@ -33,7 +36,7 @@ void gpio_marcar_entrada(int bit_inicial, int num_bits);
  * @brief Los bits indicados se utilizarán como pines de salida.
  * @param bit_inicial Indica el primer bit de salida.
  * @param num_bits    Indica cuántos bits queremos introducir.
- */ 
+ */
 void gpio_marcar_salida(int bit_inicial, int num_bits);
 
 #endif

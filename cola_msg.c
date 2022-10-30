@@ -1,8 +1,8 @@
 #include "cola_msg.h"
 
-uint8_t first = 0, last = 0, full = 0;
-uint32_t colaDATA[COLA_MSG_SIZE];
-uint8_t colaID[COLA_MSG_SIZE];
+static uint8_t first = 0, last = 0, full = 0;
+static uint32_t colaDATA[COLA_MSG_SIZE];
+static uint8_t colaID[COLA_MSG_SIZE];
 
 void cola_encolar_msg(uint8_t ID_msg, uint32_t auxData) {
   if (full) {  // overflow
