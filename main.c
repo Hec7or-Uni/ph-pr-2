@@ -4,7 +4,7 @@
 #include "test_tableros.h"
 
 void test_timer0(void);
-// void test_timer1(void);
+void test_timer1(void);
 void test_gpio(void);
 
 // MAIN
@@ -15,8 +15,8 @@ int main(void) {
   // test_tableros();
 
   // test_timer0();
-  //  test_timer1();
-  test_gpio();
+  test_timer1();
+  //test_gpio();
 
   // jugar
   // conecta4_jugar();

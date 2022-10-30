@@ -13,6 +13,7 @@ void timer0_IRC(void) __irq;
 
 void timer0_IRC(void) __irq {
   static int veces = 0;
+
   uint8_t evento = Timer_Event;
   cola_encolar_eventos(evento, ++veces, 0);
   T0TCR = T0TCR & ~0x1;  // detiene el contador
@@ -25,8 +26,8 @@ void timer0_IRC(void) __irq {
 void temporizador_iniciar() {
   // timer1_extra = 0;
 
-  T1PR = 2;  // Cuenta cada microsegundo: 3 clk = 1 us (SE PONE 2 PORQUE ES 3 -
-             // 1) ;
+  T1PR = 14;  // Cuenta cada microsegundo: 15 clk = 1 us (SE PONE 2 PORQUE ES 15
+              // - 1) ;
   T1MR0 = UINT32_MAX;  // Por si queremos un dominio mayor, de varios miles de
                        // años en lugar de una hora
 
@@ -64,7 +65,7 @@ uint32_t temporizador_parar() {
 }
 
 void temporizador_reloj(int periodo) {
-  T0PR = 2999;  // Cuenta cada milisegundo: 3 clk = 1 us;
+  T0PR = 14999;  // Cuenta cada milisegundo: 15 clk = 1 us;
   T0MR0 = periodo;
 
   T0MCR = 5;  // Interrumpe cada MR0 y para el contador
