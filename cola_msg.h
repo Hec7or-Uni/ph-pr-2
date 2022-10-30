@@ -1,14 +1,14 @@
 #ifndef COLA_ASYNC_H
 #define COLA_ASYNC_H
 #include <inttypes.h>
-#include "utils.h"
+
 #include "msg.h"
+#include "utils.h"
 
 #define COLA_MSG_SIZE_PRE 32
 #define COLA_MSG_SIZE (uint8_t) COLA_MSG_SIZE_PRE
 
-typedef struct msg_info
-{
+typedef struct msg_info {
   uint32_t auxData;
   uint8_t ID_msg;
 } msg_info;

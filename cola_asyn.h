@@ -1,13 +1,13 @@
 #ifndef COLA_ASYNC_H
 #define COLA_ASYNC_H
 #include <inttypes.h>
+
 #include "utils.h"
 
 #define COLA_EVENTOS_SIZE_PRE 32
 #define COLA_EVENTOS_SIZE (uint8_t) COLA_EVENTOS_SIZE_PRE
-				
-typedef struct evento_info   
-{
+
+typedef struct evento_info {
   uint32_t veces;
   uint32_t auxData;
   uint8_t ID_evento;
