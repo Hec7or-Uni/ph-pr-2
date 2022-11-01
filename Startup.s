@@ -190,7 +190,6 @@ Reset_Handler
                 STR     R1, [R0]
                 ENDIF
 
-
 ; Setup PLL
                 IF      PLL_SETUP <> 0
                 LDR     R0, =PLL_BASE
@@ -216,7 +215,6 @@ PLL_Loop        LDR     R3, [R0, #PLLSTAT_OFS]
                 STR     R1, [R0, #PLLFEED_OFS]
                 STR     R2, [R0, #PLLFEED_OFS]
                 ENDIF   ; PLL_SETUP
-
 
 ; Setup MAM
                 IF      MAM_SETUP <> 0
@@ -300,5 +298,30 @@ __user_initial_stackheap
                 LDR     R3, = Stack_Mem
                 BX      LR
 
+                EXPORT setup_PLL
+setup_PLL
+; Setup PLL
+                LDR     R0, =PLL_BASE
+                MOV     R1, #0xAA
+                MOV     R2, #0x55
 
+;  Configure and Enable PLL
+                MOV     R3, #PLLCFG_Val
+                STR     R3, [R0, #PLLCFG_OFS] 
+                MOV     R3, #PLLCON_PLLE
+                STR     R3, [R0, #PLLCON_OFS]
+                STR     R1, [R0, #PLLFEED_OFS]
+                STR     R2, [R0, #PLLFEED_OFS]
+
+;  Wait until PLL Locked
+PLL_Loop        LDR     R3, [R0, #PLLSTAT_OFS]
+                ANDS    R3, R3, #PLLSTAT_PLOCK
+                BEQ     PLL_Loop
+
+;  Switch to PLL Clock
+                MOV     R3, #(PLLCON_PLLE:OR:PLLCON_PLLC)
+                STR     R3, [R0, #PLLCON_OFS]
+                STR     R1, [R0, #PLLFEED_OFS]
+                STR     R2, [R0, #PLLFEED_OFS]
+                BX      LR
                 END

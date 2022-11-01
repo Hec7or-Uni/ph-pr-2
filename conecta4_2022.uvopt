@@ -142,7 +142,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDARM</Key>
-          <Name>(134=-1,-1,-1,-1,0)(135=-1,-1,-1,-1,0)(107=-1,-1,-1,-1,0)(108=429,194,586,314,0)(106=994,204,1272,558,0)(105=849,53,1087,335,0)(80=784,201,1450,687,0)(104=53,65,459,563,0)(100=902,211,1485,393,0)(113=220,244,718,767,0)(112=220,154,718,864,0)(136=-1,-1,-1,-1,0)(117=-1,-1,-1,-1,0)(110=1011,322,1537,777,0)(111=843,159,1369,614,0)(114=277,416,963,864,0)(115=-1,-1,-1,-1,0)(116=790,303,1076,593,0)</Name>
+          <Name>(134=-1,-1,-1,-1,0)(135=-1,-1,-1,-1,0)(107=-1,-1,-1,-1,0)(108=429,194,586,314,0)(106=994,204,1272,558,0)(105=849,53,1087,335,0)(80=784,201,1450,687,0)(104=53,65,459,563,0)(100=897,191,1480,373,0)(113=220,244,718,767,0)(112=220,154,718,864,0)(136=-1,-1,-1,-1,0)(117=-1,-1,-1,-1,0)(110=1011,322,1537,777,0)(111=843,159,1369,614,0)(114=277,416,963,864,0)(115=-1,-1,-1,-1,0)(116=790,303,1076,593,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -154,9 +154,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>38</LineNumber>
+          <LineNumber>32</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>4968</Address>
+          <Address>4152</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -165,17 +165,9 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>.\planificador.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\conecta4_2022\planificador.c\32</Expression>
         </Bp>
       </Breakpoint>
-      <MemoryWindow1>
-        <Mm>
-          <WinNumber>1</WinNumber>
-          <SubType>257</SubType>
-          <ItemText>&amp;alarmas</ItemText>
-          <AccSizeX>0</AccSizeX>
-        </Mm>
-      </MemoryWindow1>
       <Tracepoint>
         <THDelay>0</THDelay>
       </Tracepoint>
