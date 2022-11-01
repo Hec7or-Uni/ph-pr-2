@@ -9,6 +9,8 @@
 ".\objects\cola_msg.o"
 ".\objects\gestor_alarmas.o"
 ".\objects\gpio.o"
+".\objects\botones.o"
+".\objects\planificador.o"
 ".\objects\conecta4_buscar_alineamiento_arm.o"
 ".\objects\conecta4_hay_linea_arm_arm.o"
 ".\objects\conecta4_hay_linea_arm_c.o"

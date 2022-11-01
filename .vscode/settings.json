@@ -2,6 +2,8 @@
     "files.associations": {
         "cola_msg.h": "c",
         "eventos.h": "c",
-        "cola_asyn.h": "c"
+        "cola_asyn.h": "c",
+        "inttypes.h": "c",
+        "gestor_alarmas.h": "c"
     }
 }

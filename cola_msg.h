@@ -1,5 +1,5 @@
-#ifndef COLA_ASYNC_H
-#define COLA_ASYNC_H
+#ifndef COLA_MSG_H
+#define COLA_MSG_H
 #include <inttypes.h>
 
 #include "msg.h"

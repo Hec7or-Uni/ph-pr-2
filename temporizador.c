@@ -9,13 +9,10 @@
 // 	VICVectAddr = 0; // Acknowledge Interrupt
 // }
 
-void timer0_IRC(void) __irq;
-
 void timer0_IRC(void) __irq {
   static int veces = 0;
 
-  uint8_t evento = Timer_Event;
-  cola_encolar_eventos(evento, ++veces, 0);
+  cola_encolar_eventos(Timer_Event, ++veces, 0);
   T0TCR = T0TCR & ~0x1;  // detiene el contador
   T0PC = 0;
   T0TC = 0;
@@ -71,7 +68,10 @@ void temporizador_reloj(int periodo) {
   T0MCR = 5;  // Interrumpe cada MR0 y para el contador
 
   VICVectAddr0 = (unsigned long)timer0_IRC;
-  VICVectCntl0 = (VICVectCntl0 & 0x1ff) | 0x24;
+  VICVectCntl0 =
+      (VICVectCntl0 & ~0x1f) | 0x24;  // borra los 5 bits de menos peso y
+                                      // escribe el indice del dispositivo.
+                                      // los bits 31:6 estan reservados
   VICIntEnable = VICIntEnable | 0x00000010;  // Enable Timer0 Interrupt.
 
   // contador a 0
