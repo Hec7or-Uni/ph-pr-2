@@ -14,6 +14,9 @@ int main(void) {
   //... practica 2
 
   // test_tableros();
+	volatile uint32_t in = 0x20, out = 0;
+	//CLZ(in,out);
+	out = MSB(in);
 
   // test_timer0();
   // test_timer1();

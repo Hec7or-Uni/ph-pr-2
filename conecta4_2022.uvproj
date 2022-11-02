@@ -486,6 +486,16 @@
               <FileType>1</FileType>
               <FilePath>.\planificador.c</FilePath>
             </File>
+            <File>
+              <FileName>g_energia.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\g_energia.c</FilePath>
+            </File>
+            <File>
+              <FileName>g_io.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\g_io.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -560,6 +570,16 @@
               <FileName>botones.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\botones.h</FilePath>
+            </File>
+            <File>
+              <FileName>g_energia.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\g_energia.h</FilePath>
+            </File>
+            <File>
+              <FileName>g_io.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\g_io.h</FilePath>
             </File>
           </Files>
         </Group>

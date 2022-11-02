@@ -314,9 +314,9 @@ setup_PLL
                 STR     R2, [R0, #PLLFEED_OFS]
 
 ;  Wait until PLL Locked
-PLL_Loop        LDR     R3, [R0, #PLLSTAT_OFS]
+PLL_Loop_        LDR     R3, [R0, #PLLSTAT_OFS]
                 ANDS    R3, R3, #PLLSTAT_PLOCK
-                BEQ     PLL_Loop
+                BEQ     PLL_Loop_
 
 ;  Switch to PLL Clock
                 MOV     R3, #(PLLCON_PLLE:OR:PLLCON_PLLC)

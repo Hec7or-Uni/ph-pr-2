@@ -1,4 +1,4 @@
-#include "g_io.c"
+#include "g_io.h"
 
 void game_init() {
   gpio_escribir(0, 32, 0);  // Reiniciamos el juego

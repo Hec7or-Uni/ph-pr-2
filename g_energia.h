@@ -3,6 +3,10 @@
 
 #include <LPC210x.H> /* LPC210x definitions */
 #include <inttypes.h>
+#include "utils.h"
+#include "msg.h"
+#include "gestor_alarmas.h"
+#include "cola_msg.h"
 
 enum MCU_MODE { NORMAL, IDLE };
 
@@ -12,18 +16,18 @@ enum MCU_MODE { NORMAL, IDLE };
  * temporizador, siguen activos y lo pueden despertar al
  * realizar una interrupción.
  */
-void idle();
+void idle(void);
 
 /**
  * @brief Pone al procesador a dormir.
  * En el estado power-down los periféricos también entran en bajo consumo y
  * dejan de funcionar pero se sigue manteniendo el estado.
  */
-void power_down();
+void power_down(void);
 
 /**
  * @brief Pone al procesador en modo normal.
  */
-void reset_energy();
+void reset_energy(void);
 
 #endif

@@ -5,6 +5,7 @@
 #include <inttypes.h>
 
 #include "gpio.h"
+#include "utils.h"
 
 /**
  * @brief Inicializa el gestor de IO.
@@ -20,7 +21,7 @@ void jugador(int turno);
 /**
  * @brief columna seleccionada como jugada
  */
-void getValue(int columna);
+int getValue(void);
 
 /**
  * @brief Jugada realizada.

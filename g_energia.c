@@ -5,7 +5,7 @@ static int state = NORMAL;
 void reset_energy() {
   if (state == IDLE) {
     // Cancelar Latidos
-    cola_msg_encolar(Set_Alarm, ga_aux_data(Latido, TRUE, 0));
+    cola_encolar_msg(Set_Alarm, ga_aux_data(Latido, TRUE, 0));
     state = NORMAL;
   }
   // Resetear alarma de PD
@@ -15,11 +15,13 @@ void reset_energy() {
 void idle() {
   if (state == NORMAL) {
     // Activar Latidos
-    cola_msg_encolar(Set_Alarm, ga_aux_data(Latido, TRUE, 250));
+    cola_encolar_msg(Set_Alarm, ga_aux_data(Latido, TRUE, 250));
     state = IDLE;
   }
   PCON = PCON | 0x1;
 }
+
+void setup_PLL(void);
 
 void power_down() {
   EXTWAKE = 6;

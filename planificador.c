@@ -6,6 +6,7 @@
 #include "gpio.h"
 #include "msg.h"
 #include "utils.h"
+#include "g_energia.h"
 
 void prototipo_planificador() {
   int hay_evento, hay_msg;
@@ -15,7 +16,8 @@ void prototipo_planificador() {
   reset_energy();
   for (;;) {
     resetPD = TRUE;
-    if (hay_evento = cola_hay_eventos()) {
+		hay_evento = cola_hay_eventos();
+    if (hay_evento) {
       // reset alarma
       evento_info evento = cola_desencolar_eventos();
       switch (evento.ID_evento) {
@@ -28,7 +30,8 @@ void prototipo_planificador() {
           break;
       }
     }
-    if (hay_msg = cola_hay_msg()) {
+		hay_msg = cola_hay_msg();
+    if (hay_msg) {
       // reset alarma
       msg_info msg = cola_desencolar_msg();
       switch (msg.ID_msg) {
