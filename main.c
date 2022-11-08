@@ -14,14 +14,14 @@ int main(void) {
   //... practica 2
 
   // test_tableros();
-	volatile uint32_t in = 0x20, out = 0;
+	//volatile uint32_t in = 0x20, out = 0;
 	//CLZ(in,out);
-	out = MSB(in);
+	//out = MSB(in);
 
   // test_timer0();
   // test_timer1();
-  // test_gpio();
-  prototipo_planificador();
+  test_gpio();
+  //prototipo_planificador();
 
   // jugar
   // conecta4_jugar();

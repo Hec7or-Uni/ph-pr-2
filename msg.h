@@ -1,6 +1,14 @@
 #ifndef MSG_H
 #define MSG_H
 
-enum Messages { Set_Alarm, Reset1, Reset2, PowerDown, Latido };
+enum Messages {
+  Set_Alarm,
+  Reset1,
+  Reset2,
+  PowerDown,
+  Latido,
+  ApagarRealizada,
+  CheckColumn
+};
 
 #endif

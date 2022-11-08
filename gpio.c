@@ -20,8 +20,8 @@ int gpio_leer(int bit_inicial, int num_bits) {
 
 void gpio_escribir(int bit_inicial, int num_bits, int valor) {
   uint32_t mask = (valor & ((1 << num_bits) - 1)) << bit_inicial;
-  IOSET = mask;  //escribe los 1s
-  IOCLR = ~mask; //escribe los 0s
+  IOSET = mask;   // escribe los 1s
+  IOCLR = ~mask;  // escribe los 0s
 }
 
 void gpio_marcar_entrada(int bit_inicial, int num_bits) {
@@ -39,7 +39,8 @@ void test_gpio() {
   gpio_marcar_salida(17, 9);
   gpio_marcar_entrada(17, 9);
   gpio_marcar_salida(6, 5);
+  gpio_escribir(7, 3, 1);
   gpio_escribir(7, 3, 6);
   // Escribir algo en el gpio a partir del bit 17
-  volatile int valor = gpio_leer(19, 3);
+  volatile int valor = gpio_leer(7, 3);
 }

@@ -1,7 +1,5 @@
 #include "conecta4_2022.h"
 
-#include "entrada.h"
-
 // devuelve ERROR en caso de no encontrar fila
 uint8_t C4_calcular_fila(CELDA cuadricula[TAM_FILS][TAM_COLS],
                          uint8_t columna) {
@@ -214,5 +212,31 @@ void conecta4_jugar(void) {
       colour = C4_alternar_color(colour);
     }
     entrada_inicializar(entrada);
+  }
+}
+
+void conecta4_sqs(evento_info evento) {
+  switch (evento) {
+    case PULSACION:
+      if (evento.auxData == 2) break;
+      break;
+    case LATIDO:
+      break;
+    case PEDIR_VALOR:
+      break;
+    case DESACTIVAR_LATIDO:
+      break;
+    case ENCENDER_INVALIDO:
+      break;
+    case APAGAR_INVALIDO:
+      break;
+    case ENCENDER_DONE:
+      break;
+    case APAGAR_DONE:
+      break;
+    case CAMBIO_JUGADOR:
+      break;
+    case FIN; end(); break; case OVERFLOW:
+      break;
   }
 }

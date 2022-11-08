@@ -7,6 +7,8 @@
 #include <inttypes.h>
 
 #include "celda.h"
+#include "entrada.h"
+#include "g_io.h"
 #include "utils.h"
 
 // La representación del tablero en memoria es
