@@ -1,9 +1,20 @@
 #include "botones.h"
 
 /*
- PINSEL0:
- PINSEL1:
- */
+VICIntEnClr: Interrupt Enable Clear Register. This register allows software to
+  clear one or more bits in the Interrupt Enable register.
+EXTINT:
+VICVectAddr: Vector Address Register. When an IRQ interrupt occurs, the IRQ 
+  service routine can read this register and jump to the value read.
+VICVectAddr1: Vector address 1 register.
+VICVectAddr2: Vector address 2 register.
+VICIntEnable: Interrupt Enable Register. This register controls which of the 32 
+  interrupt requests and software interrupts are enabled to contribute to FIQ or IRQ
+PINSEL0: The PINSEL0 register controls the functions of the pins as per the
+  settings listed in Table 7-56.
+PINSEL1: The PINSEL1 register controls the functions of the pins as per the 
+  settings listed in Table 7-57.
+*/
 
 void boton1_IRC(void) __irq {
   static int veces1 = 0;
@@ -12,8 +23,7 @@ void boton1_IRC(void) __irq {
   EXTINT = EXTINT | 0x2;     // borra el flag de interrupcion
   VICVectAddr = 0;           // Acknowledge Interrupt
 
-  cola_encolar_eventos(Pulsacion, ++veces1, 1);
-  cola_encolar_msg(Set_Alarm, ga_aux_data(Reset1, TRUE, 10));
+  cola_encolar_eventos(PULSACION, ++veces1, 1);
 }
 
 void boton2_IRC(void) __irq {
@@ -23,8 +33,7 @@ void boton2_IRC(void) __irq {
   EXTINT = EXTINT | 0x4;     // borra el flag de interrupcion
   VICVectAddr = 0;           // Acknowledge Interrupt
 
-  cola_encolar_eventos(Pulsacion, ++veces2, 2);
-  cola_encolar_msg(Set_Alarm, ga_aux_data(Reset2, TRUE, 10));
+  cola_encolar_eventos(PULSACION, ++veces2, 2);
 }
 
 void botones_iniciar(void) {
@@ -53,13 +62,13 @@ void boton2_reset(void) {
   VICIntEnable = VICIntEnable | 0x00010000;  // Enable EINT2 Interrupt.
 }
 
-int boton1_pulsado() {
+int boton1_pulsado(void) {
   EXTINT = EXTINT | 0x2;  // borra el flag de interrupcion
   // si aqui se vuelve a activar entonces el boton está pulsado
   return (EXTINT & 0x2) != 0;
 }
 
-int boton2_pulsado() {
+int boton2_pulsado(void) {
   EXTINT = EXTINT | 0x4;  // borra el flag de interrupcion
   // si aqui se vuelve a activar entonces el boton está pulsado
   return (EXTINT & 0x4) != 0;

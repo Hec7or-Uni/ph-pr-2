@@ -1,115 +1,103 @@
 #include "g_io.h"
 
-void game_init() {
-  gpio_escribir(0, 32, 0);  // Reiniciamos el juego
+void g_io_iniciar() {
   gpio_marcar_salida(0, 32);
+	gpio_escribir(0, 32, 0);
 	gpio_marcar_entrada(3, 7);
 	gpio_marcar_entrada(14, 2);
+	cola_encolar_msg(SET_ALARM,g_alarma_crear(LEER_ENTRADA,FALSE,100));
 }
 
-void mostrar_jugador(int turno) {
-  static uint8_t player = 0;
-  gpio_escribir(1, 2, turno);
+void g_io_mostrar_jugador(int jugador) {
+  gpio_escribir(1, 2, jugador);
 }
 
-int get_column() {
+int g_io_leer_entrada() {
   int input = gpio_leer(3, 7);
   int msb = MSB(input);
   if ((input & ((1 << msb) - 1)) != 0) return -1;
   return msb;
 }
 
-void encender_done() {
+void g_io_encender_realizada() {
   gpio_escribir(16, 1, 1);
-  cola_encolar_msg(SetAlarm,ga_auxData(ApagarDone,FALSE,2000));
 }
 
-//Se activa al recibir evento ApagarDone
-void apagar_done() {
+void g_io_apagar_realizada() {
   gpio_escribir(16, 1, 0);
 }
 
-void invalid() {
+void g_io_mostrar_invalido() {
   gpio_escribir(17, 1, 1);
 }
 
-void invalidOFF() {
+void g_io_apagar_invalido() {
   gpio_escribir(17, 1, 0);
 }
 
-void end() {
+void g_io_fin() {
   gpio_escribir(18, 1, 1);
 }
 
-void overflow() {
+void g_io_overflow() {
   gpio_escribir(30, 1, 1);
 }
 
-// Se ejecuta al llegar un mensaje Latido
-void latido() {
+void g_io_latido() {
   static uint8_t ON = 0;
   gpio_escribir(31, 1, ON);
   ON = 1 - ON; // alternar estado
 }
 
-void latidoOFF() {
+void g_io_apagar_latido() {
   gpio_escribir(31, 1, 0);
 }
 
-void check_column() {
-  invalid();
-}
-
-void gio_tratar_evento(evento_info evento) {
+void g_io_tratar_evento(evento_t evento) {
   switch (evento.ID_evento) {
-    case PULSACION:
-      if (evento.auxData == 2) gio_reset();
-      break;
-    case PEDIR_VALOR:
-      get_column();
-      break;
-    case DESACTIVAR_LATIDO:
-      latidoOFF();
-      break;
-    case OVERFLOW:
-      // ya se vera como llega el evento
-      overflow();
-      break;
+    case OVERFLOW_E:
+      g_io_overflow();
+			while(1);
+      //break;
   }
 }
 
-void gio_tratar_mensajes(msg_info mensaje) {
+void g_io_tratar_mensaje(msg_t mensaje) {
   switch (mensaje.ID_msg) {
+		case INICIO:
+			g_io_iniciar();
+			break;
     case LATIDO:
-      latido();
+      g_io_latido();
       break;
-    case PEDIR_VALOR:
-      get_column();
+		case APAGAR_LATIDO:
+      g_io_apagar_latido();
       break;
-    case DESACTIVAR_LATIDO:
-      latidoOFF();
-      break;
-    case ENCENDER_INVALIDO:
-      invalid();
-      break;
-    case APAGAR_INVALIDO:
-      invalidOFF();
-      break;
-    case ENCENDER_DONE:
-      encender_done();
-      break;
-    case APAGAR_DONE:
-      apagar_done();
-      break;
-    case CAMBIO_JUGADOR:
-      mostrar_jugador(evento.auxData);
-      break;
-    case FIN;
-      end();
-      break;
-    case OVERFLOW:
-      // ya se vera como llega el mensaje
-      overflow();
-      break;
+    case LEER_ENTRADA:
+		  cola_encolar_msg(VALIDAR_ENTRADA,g_io_leer_entrada());
+			break;
+		case ENTRADA_VALIDADA:
+			if (mensaje.auxData) g_io_mostrar_invalido();
+			else g_io_apagar_invalido();
+			break;
+		case JUGADA_REALIZADA:
+			g_io_encender_realizada();
+			cola_encolar_msg(SET_ALARM,g_alarma_crear(APAGAR_REALIZADA,FALSE,2000)); //2s encendido
+			break;
+		case APAGAR_REALIZADA:
+			g_io_apagar_realizada();
+			break;
+		case JUGADOR:
+			g_io_mostrar_jugador(mensaje.auxData);
+			break;
+		
+		//case FIN:
+		//g_io_fin();
+		//cola_encolar_msg(SET_ALARM,g_alarma_borrar(LEER_ENTRADA));
+    case OVERFLOW_M:
+      g_io_overflow();
+			while(1);
+      //break;
   }
 }
+

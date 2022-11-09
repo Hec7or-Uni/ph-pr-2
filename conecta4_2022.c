@@ -215,7 +215,8 @@ void conecta4_jugar(void) {
   }
 }
 
-void conecta4_sqs(evento_info evento) {
+/*
+void conecta4_sqs(evento_t evento) {
   switch (evento) {
     case PULSACION:
       if (evento.auxData == 2) break;
@@ -240,3 +241,4 @@ void conecta4_sqs(evento_info evento) {
       break;
   }
 }
+*/

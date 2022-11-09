@@ -1,8 +1,11 @@
+#ifndef TEMPORIZADOR_H
+#define TEMPORIZADOR_H
+
 #include <LPC210x.H> /* LPC210x definitions */
 #include <inttypes.h>
 
 #include "cola_asyn.h"
-#include "eventos.h"
+#include "constantes.h"
 
 /**
  * @brief Programa un contador para que pueda ser utilizado.
@@ -34,3 +37,5 @@ uint32_t temporizador_parar(void);
  * @param periodo Periodo en milisegundos (ms).
  */
 void temporizador_reloj(int periodo);
+
+#endif

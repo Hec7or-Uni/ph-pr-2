@@ -11,11 +11,7 @@
 
 void timer0_IRC(void) __irq {
   static int veces = 0;
-
-  cola_encolar_eventos(Timer_Event, ++veces, 0);
-  T0TCR = T0TCR & ~0x1;  // detiene el contador
-  T0PC = 0;
-  T0TC = 0;
+  cola_encolar_eventos(TEMPORIZADOR, ++veces, 0);
   T0IR = 1;         // Clear interrupt flag
   VICVectAddr = 0;  // Acknowledge Interrupt
 }
@@ -33,8 +29,6 @@ void temporizador_iniciar() {
 
   // contador a 0
   T1TCR = T1TCR & ~0x1;
-  T1PC = 0;
-  T1TC = 0;
 
   // No es necesario si solo se devuelve unint32_t
   // VICVectAddr1 = (unsigned long)timer1_IRC;
@@ -43,6 +37,8 @@ void temporizador_iniciar() {
 }
 
 void temporizador_empezar() {
+	T1PC = 0;
+  T1TC = 0;
   T1TCR = T1TCR | 0x1;  // comienza a contar
 }
 
@@ -56,16 +52,14 @@ uint32_t temporizador_leer() {
 uint32_t temporizador_parar() {
   uint32_t time = T1TC;
   T1TCR = T1TCR & ~0x1;  // detiene el contador
-  T1PC = 0;
-  T1TC = 0;
   return time;
 }
 
 void temporizador_reloj(int periodo) {
   T0PR = 14999;  // Cuenta cada milisegundo: 15 clk = 1 us;
-  T0MR0 = periodo;
+  T0MR0 = periodo - 1;
 
-  T0MCR = 5;  // Interrumpe cada MR0 y para el contador
+  T0MCR = 3;  // Interrumpe cada MR0 y resetea el contador
 
   VICVectAddr0 = (unsigned long)timer0_IRC;
   VICVectCntl0 =
@@ -84,9 +78,9 @@ void temporizador_reloj(int periodo) {
 void test_timer1(void) {
   volatile uint32_t time;
   temporizador_iniciar();
-  volatile int kk = 123;
-  kk += 12;
-  time = kk;
+  volatile int dummy = 123;
+  dummy += 12;
+  time = dummy;
   temporizador_empezar();
   time = temporizador_leer();
   while (1) {

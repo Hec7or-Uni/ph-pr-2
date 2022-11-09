@@ -3,15 +3,16 @@
 #include <inttypes.h>
 
 #include "utils.h"
+#include "constantes.h"
+#include "semaforo_interrupciones.h"
 
-#define COLA_EVENTOS_SIZE_PRE 32
-#define COLA_EVENTOS_SIZE (uint8_t) COLA_EVENTOS_SIZE_PRE
+enum { COLA_EVENTOS_SIZE = 32 };
 
-typedef struct evento_info {
+typedef struct evento_t {
   uint32_t veces;
   uint32_t auxData;
   uint8_t ID_evento;
-} evento_info;
+} evento_t;
 
 /**
  * @brief  Funcion que encola un evento a la cola de eventos
@@ -25,7 +26,7 @@ void cola_encolar_eventos(uint8_t ID_evento, uint32_t veces, uint32_t auxData);
  * @brief  Funcion que desencola un evento de la cola de eventos
  * @return Evento desencolado
  */
-evento_info cola_desencolar_eventos(void);
+evento_t cola_desencolar_eventos(void);
 
 /**
  * @brief  Funcion que comprueba si hay eventos

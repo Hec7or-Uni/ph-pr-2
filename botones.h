@@ -5,41 +5,36 @@
 #include <inttypes.h>
 
 #include "cola_asyn.h"
-#include "cola_msg.h"
-#include "eventos.h"
-#include "gestor_alarmas.h"
-#include "gpio.h"
-#include "msg.h"
+#include "constantes.h"
+#include "g_alarmas.h"
+#include "constantes.h"
 #include "utils.h"
 
-enum { BOTON_PULSADO = 1, BOTON_NO_PULSADO = 0 };
-
 /**
- * @brief
- */
+ * @brief Prepara la configuración de las interrupciones para los
+ *  botones 1 y 2.
+ */ 
 void botones_iniciar(void);
 
 /**
- * @brief
+ * @brief Resetea la configuracion de la interrupción para el boton 1.
  */
 void boton1_reset(void);
 
 /**
- * @brief
+ * @brief Resetea la configuracion de la interrupción para el boton 2.
  */
 void boton2_reset(void);
 
 /**
- * @brief
- * @param
- * @return
+ * @brief Indica si el boton 1 está pulsado.
+ * @return true(1) si pulsado; false(0) en caso contrario.
  */
 int boton1_pulsado(void);
 
 /**
- * @brief
- * @param
- * @return
+ * @brief Indica si el boton 2 está pulsado.
+ * @return true(1) si pulsado; false(0) en caso contrario.
  */
 int boton2_pulsado(void);
 

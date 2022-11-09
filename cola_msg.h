@@ -2,16 +2,15 @@
 #define COLA_MSG_H
 #include <inttypes.h>
 
-#include "msg.h"
 #include "utils.h"
+#include "constantes.h"
 
-#define COLA_MSG_SIZE_PRE 32
-#define COLA_MSG_SIZE (uint8_t) COLA_MSG_SIZE_PRE
+enum { COLA_MSG_SIZE = 32 };
 
-typedef struct msg_info {
+typedef struct msg_t {
   uint32_t auxData;
   uint8_t ID_msg;
-} msg_info;
+} msg_t;
 
 /**
  * @brief  Funcion que encola un mensaje a la cola de mensajes
@@ -24,7 +23,7 @@ void cola_encolar_msg(uint8_t ID_msg, uint32_t auxData);
  * @brief  Funcion que desencola un mensaje de la cola de mensajes
  * @return Mensaje desencolado
  */
-msg_info cola_desencolar_msg(void);
+msg_t cola_desencolar_msg(void);
 
 /**
  * @brief  Funcion que comprueba si hay mensajes

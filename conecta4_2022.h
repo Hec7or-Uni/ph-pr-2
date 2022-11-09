@@ -24,7 +24,7 @@
  * deficición de constantes
  */
 
-/* Tama�os de la cuadricula */
+/* Tamaños de la cuadricula */
 enum {
   NUM_FILAS = 6,
   PADDING_FIL = 1,

@@ -467,11 +467,6 @@
               <FilePath>.\cola_msg.c</FilePath>
             </File>
             <File>
-              <FileName>gestor_alarmas.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\gestor_alarmas.c</FilePath>
-            </File>
-            <File>
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\gpio.c</FilePath>
@@ -496,70 +491,40 @@
               <FileType>1</FileType>
               <FilePath>.\g_io.c</FilePath>
             </File>
+            <File>
+              <FileName>g_alarmas.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\g_alarmas.c</FilePath>
+            </File>
+            <File>
+              <FileName>g_boton.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\g_boton.c</FilePath>
+            </File>
+            <File>
+              <FileName>semaforo_interrupciones.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\semaforo_interrupciones.c</FilePath>
+            </File>
+            <File>
+              <FileName>power.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\power.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Headers</GroupName>
           <Files>
             <File>
-              <FileName>celda.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\celda.h</FilePath>
-            </File>
-            <File>
-              <FileName>cola_asyn.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\cola_asyn.h</FilePath>
-            </File>
-            <File>
-              <FileName>conecta4_2022.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\conecta4_2022.h</FilePath>
-            </File>
-            <File>
-              <FileName>entrada.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\entrada.h</FilePath>
-            </File>
-            <File>
               <FileName>utils.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\utils.h</FilePath>
             </File>
             <File>
-              <FileName>tableros.h</FileName>
+              <FileName>constantes.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\tableros.h</FilePath>
-            </File>
-            <File>
-              <FileName>temporizador.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\temporizador.h</FilePath>
-            </File>
-            <File>
-              <FileName>test_tableros.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\test_tableros.h</FilePath>
-            </File>
-            <File>
-              <FileName>eventos.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\eventos.h</FilePath>
-            </File>
-            <File>
-              <FileName>cola_msg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\cola_msg.h</FilePath>
-            </File>
-            <File>
-              <FileName>gestor_alarmas.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\gestor_alarmas.h</FilePath>
-            </File>
-            <File>
-              <FileName>msg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\msg.h</FilePath>
+              <FilePath>.\constantes.h</FilePath>
             </File>
             <File>
               <FileName>gpio.h</FileName>
@@ -567,9 +532,29 @@
               <FilePath>.\gpio.h</FilePath>
             </File>
             <File>
+              <FileName>cola_asyn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\cola_asyn.h</FilePath>
+            </File>
+            <File>
+              <FileName>cola_msg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\cola_msg.h</FilePath>
+            </File>
+            <File>
+              <FileName>temporizador.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\temporizador.h</FilePath>
+            </File>
+            <File>
               <FileName>botones.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\botones.h</FilePath>
+            </File>
+            <File>
+              <FileName>g_alarmas.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\g_alarmas.h</FilePath>
             </File>
             <File>
               <FileName>g_energia.h</FileName>
@@ -580,6 +565,46 @@
               <FileName>g_io.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\g_io.h</FilePath>
+            </File>
+            <File>
+              <FileName>g_boton.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\g_boton.h</FilePath>
+            </File>
+            <File>
+              <FileName>entrada.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\entrada.h</FilePath>
+            </File>
+            <File>
+              <FileName>celda.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\celda.h</FilePath>
+            </File>
+            <File>
+              <FileName>tableros.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tableros.h</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_2022.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\conecta4_2022.h</FilePath>
+            </File>
+            <File>
+              <FileName>test_tableros.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\test_tableros.h</FilePath>
+            </File>
+            <File>
+              <FileName>semaforo_interrupciones.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\semaforo_interrupciones.h</FilePath>
+            </File>
+            <File>
+              <FileName>power.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\power.h</FilePath>
             </File>
           </Files>
         </Group>

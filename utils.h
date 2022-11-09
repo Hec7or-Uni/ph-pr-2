@@ -1,5 +1,6 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef __UTILS_H__
+#define __UTILS_H__
+#include <LPC210x.H>
 
 /* Definiciones para valores muy utilizados */
 enum { FALSE = 0, TRUE = 1, ERROR = 0xFF };
@@ -7,7 +8,7 @@ enum { FALSE = 0, TRUE = 1, ERROR = 0xFF };
 /* Comprobar si es potencia de 2*/
 #define POWER_OF_2(x) ((x != 0) && !(x & (x - 1)))
 
-// Obtiene la posiciÛn del bit m·s significativo
+// Obtiene la posici√≥n del bit m√°s significativo
 // -1 en caso de no haber
 #define MSB(x) (31 - __clz(x));
 

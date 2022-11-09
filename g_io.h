@@ -8,59 +8,75 @@
 #include "utils.h"
 #include "cola_asyn.h"
 #include "cola_msg.h"
+#include "g_alarmas.h"
 
 /**
  * @brief Inicializa el gestor de IO.
  */
-void game_init(void);
+void g_io_iniciar(void);
 
 /**
- * @brief Indicador del jugador X (1 o 2).
- * @param turno jugaador 1 o jugador 2.
+ * @brief Indicador del jugador (1 o 2).
+ * @param turno jugador 1 o jugador 2.
  */
-void alternar_jugador(int turno);
+void g_io_mostrar_jugador(int turno);
 
 /**
- * @brief columna seleccionada como jugada
- * @return columna seleccionada o -1 si no hay ninguna o más de 1.
+ * @brief Entrada seleccionada como jugada
+ * @return columna seleccionada (bit) o -1 si no hay ninguna o más de 1.
  */
-int get_column(void);
+int g_io_leer_entrada(void);
 
 /**
- * @brief Indicar jugada realizada.
+ * @brief Indicar que la jugada ha sido realizada.
  */
-void encender_done(void);
+void g_io_encender_realizada(void);
 
 /**
  * @brief Apagar indicador de jugada realizada.
  */
-void apagar_done(void);
+void g_io_apagar_realizada(void);
 
 /**
- * @brief Indicar jugada no valida.
+ * @brief Indicar jugada no válida.
  */
-void invalid(void);
+void g_io_mostrar_invalido(void);
 
-void invalidOFF(void);
+/**
+ * @brief Apagar indicador de jugada no válida.
+ */
+void g_io_apagar_invalido(void);
 
 /**
  * @brief Indicar final de partida.
  */
-void end(void);
+void g_io_fin(void);
 
 /**
  * @brief Indicar overflow
  */
-void overflow(void);
+void g_io_overflow(void);
 
 /**
  * @brief Alternar led indicador de modo idle
  */
-void latido(void);
+void g_io_latido(void);
 
 /**
  * @brief Apagar indicador de modo idle
  */
-void latidoOFF(void);
+void g_io_apagar_latido(void);
+
+/**
+ * @brief Tratamiento de eventos del módulo del gestor de entrada y salida
+ * @param evento Evento a tratar
+ */
+void g_io_tratar_evento(evento_t evento);
+
+/**
+ * @brief Tratamiento de mensajes del módulo del gestor de entrada y salida
+ * @param mensaje Mensaje a tratar
+ */
+void g_io_tratar_mensaje(msg_t mensaje);
 
 #endif
