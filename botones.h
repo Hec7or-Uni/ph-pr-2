@@ -5,9 +5,9 @@
 #include <inttypes.h>
 
 #include "cola_asyn.h"
-#include "constantes.h"
+#include "msg.h"
+#include "eventos.h"
 #include "g_alarmas.h"
-#include "constantes.h"
 #include "utils.h"
 
 /**

@@ -3,7 +3,8 @@
 #include <inttypes.h>
 
 #include "utils.h"
-#include "constantes.h"
+#include "msg.h"
+#include "eventos.h"
 
 enum { COLA_MSG_SIZE = 32 };
 
@@ -30,5 +31,10 @@ msg_t cola_desencolar_msg(void);
  * @return Número de mensajes
  */
 int cola_hay_msg(void);
+
+/**
+ * @brief  Funcion que vacía la cola de mensajes
+ */
+void cola_vaciar_msg(void);
 
 #endif

@@ -1,6 +1,3 @@
-// Tipo Abstracto de Datos. Encapsula el formato del tablero
-
-/* guarda para evitar inclusiones m�ltiples ("include guard") */
 #ifndef CONECTA4_H_2022
 #define CONECTA4_H_2022
 
@@ -8,17 +5,9 @@
 
 #include "celda.h"
 #include "entrada.h"
-#include "g_io.h"
+#include "msg.h"
+#include "cola_msg.h"
 #include "utils.h"
-
-// La representación del tablero en memoria es
-// 0 C1 C2 C3 C4 C5 C6 C7
-// F1
-// F2
-// F3
-// F4
-// F5
-// F6
 
 /******************************************************************************
  * deficición de constantes
@@ -66,6 +55,9 @@ uint8_t conecta4_hay_linea_arm_arm(CELDA cuadricula[TAM_FILS][TAM_COLS],
 // función principal del juego
 void conecta4_jugar(void);
 
+// Tratamiento de mensajes del módulo de conecta 4.
+void conecta4_tratar_mensaje(msg_t mensaje);
+
 /* *****************************************************************************
  * declaración funciones internas C4_
  */
@@ -91,5 +83,14 @@ static inline uint8_t C4_columna_valida(uint8_t columna) {
 static inline uint8_t C4_fila_valida(uint8_t fila) {
   return (fila >= 1) && (fila <= NUM_FILAS);
 }
+
+// Reacción del juego ante un evento INICIO o RESET
+void C4_iniciar(void);
+
+// Reacción del juego ante un evento VALIDAR_ENTRADA
+void C4_validar(uint8_t columna);
+
+// Reacción del juego ante un evento JUGAR
+void C4_jugar(void);
 
 #endif /* CONECTA4_H_2022 */

@@ -41,4 +41,4 @@ void cola_vaciar_msg(void) {
 	full = FALSE;
 }
 
-int cola_hay_msg(void) { return first != last; }
+int cola_hay_msg(void) { return first != last  || full; }

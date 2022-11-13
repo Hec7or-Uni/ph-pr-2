@@ -4,23 +4,23 @@
 #include <LPC210x.H> /* LPC210x definitions */
 
 /**
- * @brief LLama a función ASM establecida en Startup.s para restablecer
- * la configuración del PLL
+ * @brief LLama a funciÃ³n ASM establecida en Startup.s para restablecer
+ * la configuraciÃ³n del PLL
  */
 void setup_PLL(void);
 
 /**
  * @brief Pone al procesador a dormir.
- * En el estado power-down los periféricos también entran en bajo consumo y
+ * En el estado power-down los perifÃ©ricos tambiÃ©n entran en bajo consumo y
  * dejan de funcionar pero se sigue manteniendo el estado.
  */
 void power_down(void);
 
 /**
  * @brief Pone el procesador en modo bajo consumo.
- * En g_energia_idle el procesador se para, pero los periféricos del chip, como el
+ * En g_energia_idle el procesador se para, pero los perifÃ©ricos del chip, como el
  * temporizador, siguen activos y lo pueden despertar al
- * realizar una interrupción.
+ * realizar una interrupciÃ³n.
  */
 void idle(void);
 

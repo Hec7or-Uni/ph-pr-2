@@ -17,13 +17,13 @@ void g_io_iniciar(void);
 
 /**
  * @brief Indicador del jugador (1 o 2).
- * @param turno jugador 1 o jugador 2.
+ * @param turno Jugador 1 o jugador 2.
  */
 void g_io_mostrar_jugador(int turno);
 
 /**
  * @brief Entrada seleccionada como jugada
- * @return columna seleccionada (bit) o -1 si no hay ninguna o más de 1.
+ * @return Columna seleccionada o 0 si no hay ninguna o más de 1.
  */
 int g_io_leer_entrada(void);
 

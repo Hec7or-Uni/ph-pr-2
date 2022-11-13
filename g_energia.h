@@ -3,7 +3,8 @@
 
 #include <inttypes.h>
 #include "utils.h"
-#include "constantes.h"
+#include "msg.h"
+#include "eventos.h"
 #include "g_alarmas.h"
 #include "cola_msg.h"
 #include "cola_asyn.h"

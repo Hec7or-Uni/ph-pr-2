@@ -522,11 +522,6 @@
               <FilePath>.\utils.h</FilePath>
             </File>
             <File>
-              <FileName>constantes.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\constantes.h</FilePath>
-            </File>
-            <File>
               <FileName>gpio.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\gpio.h</FilePath>
@@ -605,6 +600,16 @@
               <FileName>power.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\power.h</FilePath>
+            </File>
+            <File>
+              <FileName>msg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\msg.h</FilePath>
+            </File>
+            <File>
+              <FileName>eventos.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\eventos.h</FilePath>
             </File>
           </Files>
         </Group>

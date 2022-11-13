@@ -200,8 +200,7 @@ void conecta4_jugar(void) {
         C4_calcular_fila(cuadricula_1, column);  // returns 0 if is not in range
     if (C4_fila_valida(row) && C4_columna_valida(column)) {
       C4_actualizar_tablero(cuadricula_1, row, column, colour);
-      if (C4_verificar_4_en_linea(cuadricula_1, row, column, colour,
-                                  0 /*NULL*/)) {
+      if (C4_verificar_4_en_linea(cuadricula_1, row, column, colour, 0 /*NULL*/)) {
         while (1)
           ;
       }
@@ -215,30 +214,81 @@ void conecta4_jugar(void) {
   }
 }
 
-/*
-void conecta4_sqs(evento_t evento) {
-  switch (evento) {
-    case PULSACION:
-      if (evento.auxData == 2) break;
+enum C4_estado {C4_INICIO, C4_ESPERA, C4_JUGANDO, C4_FIN};
+
+static int estado = C4_INICIO;
+static uint8_t color = 1;
+
+static CELDA tablero[7][8] = {
+  0,    0XC1, 0XC2, 0XC3, 0XC4, 0XC5, 0XC6, 0XC7, 
+  0XF1,    0,    0,    0,    0,    0,    0,    0,    
+  0XF2,    0,    0,    0,    0,    0,    0,    0,    
+  0XF3,    0,    0,    0,    0,    0,    0,    0,    
+  0XF4,    0,    0,    0,    0,    0,    0,    0,    
+  0XF5,    0,    0,    0,    0,    0,    0,    0,    
+  0XF6,    0,    0,    0,    0,    0,    0,    0};
+
+void C4_iniciar() {
+	color = 1;
+  cola_encolar_msg(JUGADOR, color);
+  for (int i = 1; i <= NUM_FILAS; i++) {
+    for (int j = 1; j <= NUM_COLUMNAS; j++) {
+      tablero[i][j] = 0;
+    }
+  }
+  estado = C4_ESPERA;
+}
+
+void C4_validar(uint8_t columna) {
+  uint8_t fila = 0;
+  int ok = C4_columna_valida(columna);
+  if (ok) fila = C4_calcular_fila(tablero,columna);
+  ok = ok && C4_fila_valida(fila);
+  
+  if (estado == C4_ESPERA) {
+    cola_encolar_msg(ENTRADA_VALIDADA,ok);
+  }
+  else if (estado == C4_JUGANDO) {
+    if (ok) {
+      C4_actualizar_tablero(tablero, fila, columna, color);
+      cola_encolar_msg(JUGADA_REALIZADA, 0);
+      // medir el tiempo -> mensaje al gestor de alarma o directamente usar el temporizador??
+      int fin = conecta4_hay_linea_arm_arm(tablero, fila, columna, color);
+      if (fin) {
+        cola_encolar_msg(FIN, fin);
+        estado = C4_FIN;
+      }
+      else {
+        color = C4_alternar_color(color);
+        cola_encolar_msg(JUGADOR, color);
+        estado = C4_ESPERA;
+      }
+    }
+    else {
+      estado = C4_ESPERA;
+    }
+  } // if (estado == C4_FIN) nothing;
+}
+
+void C4_jugar() {
+  if (estado != C4_FIN) {
+    cola_encolar_msg(LEER_ENTRADA,0);
+    estado = C4_JUGANDO;
+  }
+}
+
+void conecta4_tratar_mensaje(msg_t mensaje) {
+  switch (mensaje.ID_msg) {
+    case INICIO:
+    case RESET:
+      C4_iniciar();
       break;
-    case LATIDO:
+    case VALIDAR_ENTRADA:
+      C4_validar(mensaje.auxData);
       break;
-    case PEDIR_VALOR:
-      break;
-    case DESACTIVAR_LATIDO:
-      break;
-    case ENCENDER_INVALIDO:
-      break;
-    case APAGAR_INVALIDO:
-      break;
-    case ENCENDER_DONE:
-      break;
-    case APAGAR_DONE:
-      break;
-    case CAMBIO_JUGADOR:
-      break;
-    case FIN; end(); break; case OVERFLOW:
+    case JUGAR:
+      C4_jugar();
       break;
   }
 }
-*/
+

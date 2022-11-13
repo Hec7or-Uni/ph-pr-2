@@ -19,9 +19,10 @@ int gpio_leer(int bit_inicial, int num_bits) {
 }
 
 void gpio_escribir(int bit_inicial, int num_bits, int valor) {
-  uint32_t mask = (valor & ((1 << num_bits) - 1)) << bit_inicial;
-  IOSET = mask;   // escribe los 1s
-  IOCLR = ~mask;  // escribe los 0s
+  uint32_t maskON = (valor & ((1 << num_bits) - 1)) << bit_inicial;
+  uint32_t maskOFF = (~valor & ((1 << num_bits) - 1)) << bit_inicial;
+  IOSET = maskON;   // escribe los 1s
+  IOCLR = maskOFF;  // escribe los 0s
 }
 
 void gpio_marcar_entrada(int bit_inicial, int num_bits) {

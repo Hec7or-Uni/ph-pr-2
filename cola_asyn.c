@@ -44,9 +44,16 @@ evento_t cola_desencolar_eventos(void) {
   return evento;
 }
 
-int cola_hay_eventos(void) { return first != last; }
+int cola_hay_eventos(void) {
+  bloquear_interrupciones(); /*LOCK*/
+  int res = first != last || full;
+  liberar_interrupciones(); /*UNLOCK*/
+  return res;
+}
 
 void cola_vaciar_eventos(void) {
+  bloquear_interrupciones(); /*LOCK*/
 	first = last;
 	full = FALSE;
+  liberar_interrupciones(); /*UNLOCK*/
 }

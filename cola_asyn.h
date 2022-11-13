@@ -3,7 +3,8 @@
 #include <inttypes.h>
 
 #include "utils.h"
-#include "constantes.h"
+#include "msg.h"
+#include "eventos.h"
 #include "semaforo_interrupciones.h"
 
 enum { COLA_EVENTOS_SIZE = 32 };
@@ -33,5 +34,10 @@ evento_t cola_desencolar_eventos(void);
  * @return Número de eventos
  */
 int cola_hay_eventos(void);
+
+/**
+ * @brief  Funcion que vacía la cola de eventos
+ */
+void cola_vaciar_eventos(void);
 
 #endif
