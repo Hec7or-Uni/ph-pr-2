@@ -1,21 +1,5 @@
 #include "botones.h"
 
-/*
-VICIntEnClr: Interrupt Enable Clear Register. This register allows software to
-  clear one or more bits in the Interrupt Enable register.
-EXTINT:
-VICVectAddr: Vector Address Register. When an IRQ interrupt occurs, the IRQ
-  service routine can read this register and jump to the value read.
-VICVectAddr1: Vector address 1 register.
-VICVectAddr2: Vector address 2 register.
-VICIntEnable: Interrupt Enable Register. This register controls which of the 32
-  interrupt requests and software interrupts are enabled to contribute to FIQ or
-IRQ PINSEL0: The PINSEL0 register controls the functions of the pins as per the
-  settings listed in Table 7-56.
-PINSEL1: The PINSEL1 register controls the functions of the pins as per the
-  settings listed in Table 7-57.
-*/
-
 void boton1_IRC(void) __irq {
   static int veces1 = 0;
 

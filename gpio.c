@@ -1,12 +1,5 @@
 #include "gpio.h"
 
-/*
- IOPIN: para leer los de entrada
- IODIR: si el bit tiene un 0 es de entrada, y si tiene un 1 es de salida
- IOSET: 1s donde queremos poner 1s
- IOCLR: 1s donde queremos poner 0s
- */
-
 void gpio_iniciar(void) {
   // Limpiamos los pines
   IODIR = 0xFFFFFFFF;
