@@ -65,11 +65,17 @@ void g_alarma_comprobar_alarmas() {
   }
 }
 
+static uint32_t tiempo_inicial, tiempo_final, tiempo_total;
+
 void g_alarma_tratar_evento(evento_t evento) {
   switch (evento.ID_evento) {
     case TEMPORIZADOR:
       g_alarma_comprobar_alarmas();
       break;
+    case PULSACION:
+      if (evento.auxData == 1) {
+        tiempo_inicial = temporizador_leer();
+      }
   }
 }
 
@@ -77,9 +83,19 @@ void g_alarma_tratar_mensaje(msg_t mensaje) {
   switch (mensaje.ID_msg) {
     case INICIO:
       temporizador_reloj(1);
+      temporizador_iniciar();
+      temporizador_empezar();
       break;
     case SET_ALARM:
       g_alarma_programar(mensaje.auxData);
+      break;
+    case JUGADA_REALIZADA:
+      tiempo_final = temporizador_leer();
+      // tiempo de la ultima jugada realizada
+      tiempo_total = tiempo_final - tiempo_inicial;
+      break;
+    case FIN:
+      temporizador_parar();
       break;
   }
 }
