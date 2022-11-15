@@ -447,19 +447,9 @@
               <FilePath>.\conecta4_2022.c</FilePath>
             </File>
             <File>
-              <FileName>entrada.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\entrada.c</FilePath>
-            </File>
-            <File>
               <FileName>temporizador.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\temporizador.c</FilePath>
-            </File>
-            <File>
-              <FileName>test_tableros.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\test_tableros.c</FilePath>
             </File>
             <File>
               <FileName>cola_msg.c</FileName>
@@ -475,11 +465,6 @@
               <FileName>botones.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\botones.c</FilePath>
-            </File>
-            <File>
-              <FileName>planificador.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\planificador.c</FilePath>
             </File>
             <File>
               <FileName>g_energia.c</FileName>
@@ -567,29 +552,14 @@
               <FilePath>.\g_boton.h</FilePath>
             </File>
             <File>
-              <FileName>entrada.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\entrada.h</FilePath>
-            </File>
-            <File>
               <FileName>celda.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\celda.h</FilePath>
             </File>
             <File>
-              <FileName>tableros.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\tableros.h</FilePath>
-            </File>
-            <File>
               <FileName>conecta4_2022.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\conecta4_2022.h</FilePath>
-            </File>
-            <File>
-              <FileName>test_tableros.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\test_tableros.h</FilePath>
             </File>
             <File>
               <FileName>semaforo_interrupciones.h</FileName>

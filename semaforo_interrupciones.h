@@ -1,8 +1,8 @@
 #ifndef __SEMAFORO_INTERRUPCIONES__
 #define __SEMAFORO_INTERRUPCIONES__
 
-#include <inttypes.h>
 #include <LPC210x.H>
+#include <inttypes.h>
 
 static uint32_t recover;
 

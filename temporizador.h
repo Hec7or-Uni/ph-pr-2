@@ -5,8 +5,8 @@
 #include <inttypes.h>
 
 #include "cola_asyn.h"
-#include "msg.h"
 #include "eventos.h"
+#include "msg.h"
 
 /**
  * @brief Programa un contador para que pueda ser utilizado.

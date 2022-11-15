@@ -4,14 +4,9 @@
 #include <inttypes.h>
 
 #include "celda.h"
-#include "entrada.h"
-#include "msg.h"
 #include "cola_msg.h"
+#include "msg.h"
 #include "utils.h"
-
-/******************************************************************************
- * deficición de constantes
- */
 
 /* Tamaños de la cuadricula */
 enum {
@@ -51,9 +46,6 @@ uint8_t conecta4_hay_linea_arm_c(CELDA cuadricula[TAM_FILS][TAM_COLS],
 uint8_t conecta4_hay_linea_arm_arm(CELDA cuadricula[TAM_FILS][TAM_COLS],
                                    uint8_t fila, uint8_t columna,
                                    uint8_t color);
-
-// función principal del juego
-void conecta4_jugar(void);
 
 // Tratamiento de mensajes del módulo de conecta 4.
 void conecta4_tratar_mensaje(msg_t mensaje);

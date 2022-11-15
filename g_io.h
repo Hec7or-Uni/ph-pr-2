@@ -4,11 +4,11 @@
 #include <LPC210x.H> /* LPC210x definitions */
 #include <inttypes.h>
 
-#include "gpio.h"
-#include "utils.h"
 #include "cola_asyn.h"
 #include "cola_msg.h"
 #include "g_alarmas.h"
+#include "gpio.h"
+#include "utils.h"
 
 /**
  * @brief Inicializa el gestor de IO.

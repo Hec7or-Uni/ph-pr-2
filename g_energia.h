@@ -2,13 +2,14 @@
 #define GESTOR_ENERGIA_H
 
 #include <inttypes.h>
-#include "utils.h"
-#include "msg.h"
+
+#include "cola_asyn.h"
+#include "cola_msg.h"
 #include "eventos.h"
 #include "g_alarmas.h"
-#include "cola_msg.h"
-#include "cola_asyn.h"
+#include "msg.h"
 #include "power.h"
+#include "utils.h"
 
 enum estados { NORMAL, IDLE };
 
@@ -26,9 +27,9 @@ void g_energia_reset(void);
 
 /**
  * @brief Pone el procesador en modo bajo consumo.
- * En g_energia_idle el procesador se para, pero los periféricos del chip, como el
- * temporizador, siguen activos y lo pueden despertar al
- * realizar una interrupción.
+ * En g_energia_idle el procesador se para, pero los periféricos del chip, como
+ * el temporizador, siguen activos y lo pueden despertar al realizar una
+ * interrupción.
  */
 void g_energia_idle(void);
 

@@ -1,7 +1,7 @@
 #include "power.h"
 
 void power_down() {
-	EXTWAKE = 6;
+  EXTWAKE = 6;
   PCON = PCON | 0x2;
 }
 

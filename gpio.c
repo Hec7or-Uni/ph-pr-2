@@ -34,14 +34,3 @@ void gpio_marcar_salida(int bit_inicial, int num_bits) {
   uint32_t mask = ((1 << num_bits) - 1) << bit_inicial;
   IODIR = IODIR | mask;
 }
-
-void test_gpio() {
-  gpio_iniciar();
-  gpio_marcar_salida(17, 9);
-  gpio_marcar_entrada(17, 9);
-  gpio_marcar_salida(6, 5);
-  gpio_escribir(7, 3, 1);
-  gpio_escribir(7, 3, 6);
-  // Escribir algo en el gpio a partir del bit 17
-  volatile int valor = gpio_leer(7, 3);
-}

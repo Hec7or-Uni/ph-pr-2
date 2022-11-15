@@ -2,10 +2,10 @@
 #define COLA_ASYNC_H
 #include <inttypes.h>
 
-#include "utils.h"
-#include "msg.h"
 #include "eventos.h"
+#include "msg.h"
 #include "semaforo_interrupciones.h"
+#include "utils.h"
 
 enum { COLA_EVENTOS_SIZE = 32 };
 
@@ -34,10 +34,5 @@ evento_t cola_desencolar_eventos(void);
  * @return Número de eventos
  */
 int cola_hay_eventos(void);
-
-/**
- * @brief  Funcion que vacía la cola de eventos
- */
-void cola_vaciar_eventos(void);
 
 #endif

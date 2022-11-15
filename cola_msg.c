@@ -9,13 +9,12 @@ void cola_encolar_msg(uint8_t ID_msg, uint32_t auxData) {
     last = 0;
   }
 
-	if (full) {  // overflow 
-		colaID[last] = OVERFLOW_M;
+  if (full) {  // overflow
+    colaID[last] = OVERFLOW_M;
+  } else {
+    colaDATA[last] = auxData;
+    colaID[last] = ID_msg;
   }
-	else {
-		colaDATA[last] = auxData;
-		colaID[last] = ID_msg;
-	}
   last++;
   if (last == first) {
     full = TRUE;
@@ -36,9 +35,4 @@ msg_t cola_desencolar_msg(void) {
   return msg;
 }
 
-void cola_vaciar_msg(void) {
-	first = last;
-	full = FALSE;
-}
-
-int cola_hay_msg(void) { return first != last  || full; }
+int cola_hay_msg(void) { return first != last || full; }

@@ -5,7 +5,7 @@ static alarma_t alarmas[NUM_ALARMAS];
 static uint32_t tiempo[NUM_ALARMAS];
 
 alarma_t g_alarma_borrar(uint8_t ID_msg) {
-  return ID_msg << 24; // El resto de campos a 0 para borrarla
+  return ID_msg << 24;  // El resto de campos a 0 para borrarla
 }
 
 alarma_t g_alarma_crear(uint8_t ID_msg, int esPeriodica, uint32_t retardo) {
@@ -20,9 +20,7 @@ alarma_t g_alarma_crear(uint8_t ID_msg, int esPeriodica, uint32_t retardo) {
 
 alarma_t g_alarma_retardo(alarma_t alarma) { return alarma & 0x7FFFFF; }
 
-int g_alarma_es_periodica(alarma_t alarma) {
-  return (alarma & 0x800000) != 0;
-}
+int g_alarma_es_periodica(alarma_t alarma) { return (alarma & 0x800000) != 0; }
 
 uint8_t g_alarma_id_msg(alarma_t alarma) { return alarma >> 24; }
 
@@ -58,7 +56,7 @@ void g_alarma_programar(alarma_t alarma) {
 void g_alarma_comprobar_alarmas() {
   for (int i = 0; i < NUM_ALARMAS; i++) {
     if (alarmas[i] == 0 || --tiempo[i] > 0) continue;
-		cola_encolar_msg(g_alarma_id_msg(alarmas[i]), 0);
+    cola_encolar_msg(g_alarma_id_msg(alarmas[i]), 0);
     if (!g_alarma_es_periodica(alarmas[i])) {
       alarmas[i] = 0;  // cancelar
     } else {
@@ -77,9 +75,9 @@ void g_alarma_tratar_evento(evento_t evento) {
 
 void g_alarma_tratar_mensaje(msg_t mensaje) {
   switch (mensaje.ID_msg) {
-		case INICIO:
-			temporizador_reloj(1);
-			break;
+    case INICIO:
+      temporizador_reloj(1);
+      break;
     case SET_ALARM:
       g_alarma_programar(mensaje.auxData);
       break;

@@ -37,7 +37,7 @@ void temporizador_iniciar() {
 }
 
 void temporizador_empezar() {
-	T1PC = 0;
+  T1PC = 0;
   T1TC = 0;
   T1TCR = T1TCR | 0x1;  // comienza a contar
 }

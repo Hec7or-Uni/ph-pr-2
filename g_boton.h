@@ -3,9 +3,8 @@
 
 #include "cola_asyn.h"
 #include "cola_msg.h"
-#include "msg.h"
 #include "eventos.h"
-
+#include "msg.h"
 
 /**
  * @brief Tratamiento de eventos del módulo del gestor de botones.

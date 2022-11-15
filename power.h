@@ -18,9 +18,9 @@ void power_down(void);
 
 /**
  * @brief Pone el procesador en modo bajo consumo.
- * En g_energia_idle el procesador se para, pero los periféricos del chip, como el
- * temporizador, siguen activos y lo pueden despertar al
- * realizar una interrupción.
+ * En g_energia_idle el procesador se para, pero los periféricos del chip, como
+ * el temporizador, siguen activos y lo pueden despertar al realizar una
+ * interrupción.
  */
 void idle(void);
 
