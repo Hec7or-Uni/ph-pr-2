@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "type_traits": "c",
-        "eventos.h": "c"
+        "eventos.h": "c",
+        "conecta4_2022.h": "c"
     }
 }
