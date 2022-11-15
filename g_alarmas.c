@@ -65,7 +65,7 @@ void g_alarma_comprobar_alarmas() {
   }
 }
 
-static uint32_t tiempo_inicial, tiempo_final, tiempo_total;
+static volatile uint32_t tiempo_inicial, tiempo_final, tiempo_total;
 
 void g_alarma_tratar_evento(evento_t evento) {
   switch (evento.ID_evento) {

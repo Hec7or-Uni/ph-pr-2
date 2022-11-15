@@ -9,7 +9,7 @@ I (msg.h)(0x6373B5F8)
 I (semaforo_interrupciones.h)(0x6373B605)
 I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
 I (utils.h)(0x6373B3F5)
-I (cola_msg.h)(0x6373B3F5)
+I (cola_msg.h)(0x6373BA6E)
 I (conecta4_2022.h)(0x6373B68D)
 I (celda.h)(0x6373B532)
 I (g_alarmas.h)(0x6373B3F5)
@@ -33,11 +33,11 @@ I (conecta4_2022.h)(0x6373B68D)
 I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
 I (celda.h)(0x6373B532)
-I (cola_msg.h)(0x6373B3F5)
+I (cola_msg.h)(0x6373BA6E)
+I (eventos.h)(0x6373B54C)
+I (msg.h)(0x6373B5F8)
 I (utils.h)(0x6373B3F5)
 I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
-I (msg.h)(0x6373B5F8)
-I (eventos.h)(0x6373B54C)
 F (.\temporizador.c)(0x6373B60E)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\temporizador.o --omf_browse .\objects\temporizador.crf --depend .\objects\temporizador.d)
 I (temporizador.h)(0x6373B63D)
 I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
@@ -49,19 +49,19 @@ I (msg.h)(0x6373B5F8)
 I (semaforo_interrupciones.h)(0x6373B605)
 I (utils.h)(0x6373B3F5)
 F (.\cola_msg.c)(0x6373B497)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\cola_msg.o --omf_browse .\objects\cola_msg.crf --depend .\objects\cola_msg.d)
-I (cola_msg.h)(0x6373B3F5)
+I (cola_msg.h)(0x6373BA6E)
 I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
+I (eventos.h)(0x6373B54C)
+I (msg.h)(0x6373B5F8)
 I (utils.h)(0x6373B3F5)
 I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
-I (msg.h)(0x6373B5F8)
-I (eventos.h)(0x6373B54C)
-F (.\gpio.c)(0x6373B5F1)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+F (.\gpio.c)(0x6373BA66)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
 I (gpio.h)(0x6373B5A7)
 I (C:\Keil_v5\ARM\INC\Philips\LPC210X.H)(0x559D2F68)
 I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
-F (.\botones.c)(0x6373B538)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\botones.o --omf_browse .\objects\botones.crf --depend .\objects\botones.d)
+F (.\botones.c)(0x6373BA3F)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\botones.o --omf_browse .\objects\botones.crf --depend .\objects\botones.d)
 I (botones.h)(0x6373B535)
 I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
 I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
@@ -72,7 +72,7 @@ I (msg.h)(0x6373B5F8)
 I (semaforo_interrupciones.h)(0x6373B605)
 I (utils.h)(0x6373B3F5)
 I (g_alarmas.h)(0x6373B3F5)
-I (cola_msg.h)(0x6373B3F5)
+I (cola_msg.h)(0x6373BA6E)
 I (temporizador.h)(0x6373B63D)
 F (.\g_energia.c)(0x6373B4D7)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\g_energia.o --omf_browse .\objects\g_energia.crf --depend .\objects\g_energia.d)
 I (g_energia.h)(0x6373B524)
@@ -84,7 +84,7 @@ I (msg.h)(0x6373B5F8)
 I (semaforo_interrupciones.h)(0x6373B605)
 I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
 I (utils.h)(0x6373B3F5)
-I (cola_msg.h)(0x6373B3F5)
+I (cola_msg.h)(0x6373BA6E)
 I (g_alarmas.h)(0x6373B3F5)
 I (temporizador.h)(0x6373B63D)
 I (power.h)(0x6373B5FC)
@@ -98,19 +98,19 @@ I (eventos.h)(0x6373B54C)
 I (msg.h)(0x6373B5F8)
 I (semaforo_interrupciones.h)(0x6373B605)
 I (utils.h)(0x6373B3F5)
-I (cola_msg.h)(0x6373B3F5)
+I (cola_msg.h)(0x6373BA6E)
 I (g_alarmas.h)(0x6373B3F5)
 I (temporizador.h)(0x6373B63D)
 I (gpio.h)(0x6373B5A7)
-F (.\g_alarmas.c)(0x6373B52D)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\g_alarmas.o --omf_browse .\objects\g_alarmas.crf --depend .\objects\g_alarmas.d)
+F (.\g_alarmas.c)(0x6373BFA6)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\g_alarmas.o --omf_browse .\objects\g_alarmas.crf --depend .\objects\g_alarmas.d)
 I (g_alarmas.h)(0x6373B3F5)
 I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x599F2F9E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
-I (cola_msg.h)(0x6373B3F5)
+I (cola_msg.h)(0x6373BA6E)
+I (eventos.h)(0x6373B54C)
+I (msg.h)(0x6373B5F8)
 I (utils.h)(0x6373B3F5)
 I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
-I (msg.h)(0x6373B5F8)
-I (eventos.h)(0x6373B54C)
 I (temporizador.h)(0x6373B63D)
 I (cola_asyn.h)(0x6373B49F)
 I (semaforo_interrupciones.h)(0x6373B605)
@@ -125,7 +125,7 @@ I (msg.h)(0x6373B5F8)
 I (semaforo_interrupciones.h)(0x6373B605)
 I (utils.h)(0x6373B3F5)
 I (g_alarmas.h)(0x6373B3F5)
-I (cola_msg.h)(0x6373B3F5)
+I (cola_msg.h)(0x6373BA6E)
 I (temporizador.h)(0x6373B63D)
 F (.\semaforo_interrupciones.c)(0x6373B603)(--c99 -c --cpu ARM7TDMI -D__EVAL -g -O0 -Otime-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\semaforo_interrupciones.o --omf_browse .\objects\semaforo_interrupciones.crf --depend .\objects\semaforo_interrupciones.d)
 I (semaforo_interrupciones.h)(0x6373B605)
@@ -138,7 +138,7 @@ I (C:\Keil_v5\ARM\INC\Philips\LPC210x.H)(0x559D2F68)
 F (.\utils.h)(0x6373B3F5)()
 F (.\gpio.h)(0x6373B5A7)()
 F (.\cola_asyn.h)(0x6373B49F)()
-F (.\cola_msg.h)(0x6373B3F5)()
+F (.\cola_msg.h)(0x6373BA6E)()
 F (.\temporizador.h)(0x6373B63D)()
 F (.\botones.h)(0x6373B535)()
 F (.\g_alarmas.h)(0x6373B3F5)()
