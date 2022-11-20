@@ -84,6 +84,7 @@ void g_alarma_tratar_mensaje(msg_t mensaje) {
     case INICIO:
       temporizador_reloj(1);
       temporizador_iniciar();
+    case RESET:
       temporizador_empezar();
       break;
     case SET_ALARM:

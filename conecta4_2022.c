@@ -189,10 +189,13 @@ static int estado = C4_INICIO;
 static uint8_t color = 1;
 
 static CELDA tablero[7][8] = {
-    0, 0XC1, 0XC2, 0XC3, 0XC4, 0XC5, 0XC6, 0XC7, 0XF1, 0, 0,    0, 0,    0,
-    0, 0,    0XF2, 0,    0,    0,    0,    0,    0,    0, 0XF3, 0, 0,    0,
-    0, 0,    0,    0,    0XF4, 0,    0,    0,    0,    0, 0,    0, 0XF5, 0,
-    0, 0,    0,    0,    0,    0,    0XF6, 0,    0,    0, 0,    0, 0,    0};
+       0, 0XC1, 0XC2, 0XC3, 0XC4, 0XC5, 0XC6, 0XC7,
+    0XF1,    0,    0,    0,    0,    0,    0,    0,   
+    0XF2,    0,    0,    0,    0,    0,    0,    0,   
+    0XF3,    0,    0,    0,    0,    0,    0,    0,   
+    0XF4,    0,    0,    0,    0,    0,    0,    0,   
+    0XF5,    0,    0,    0,    0,    0,    0,    0,   
+    0XF6,    0,    0,    0,    0,    0,    0,    0};
 
 void C4_iniciar() {
   color = 1;
@@ -217,8 +220,6 @@ void C4_validar(uint8_t columna) {
     if (ok) {
       C4_actualizar_tablero(tablero, fila, columna, color);
       cola_encolar_msg(JUGADA_REALIZADA, 0);
-      // medir el tiempo -> mensaje al gestor de alarma o directamente usar el
-      // temporizador??
       int fin = conecta4_hay_linea_arm_arm(tablero, fila, columna, color) ||
                 C4_comprobar_empate(tablero);
       if (fin) {
