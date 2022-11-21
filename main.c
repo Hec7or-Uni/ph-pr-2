@@ -15,16 +15,16 @@ int main(void) {
       evento_t evento = cola_desencolar_eventos();
       g_alarma_tratar_evento(evento);
       g_energia_tratar_evento(evento);
+			g_io_tratar_evento(evento);
       g_boton_tratar_evento(evento);
-      g_io_tratar_evento(evento);
     }
     hay_msg = cola_hay_msg();
     if (hay_msg) {
       msg_t msg = cola_desencolar_msg();
       g_alarma_tratar_mensaje(msg);
       g_energia_tratar_mensaje(msg);
+			g_io_tratar_mensaje(msg);
       g_boton_tratar_mensaje(msg);
-      g_io_tratar_mensaje(msg);
       conecta4_tratar_mensaje(msg);
     }
     if (!hay_evento && !hay_msg) g_energia_idle();

@@ -1,8 +1,12 @@
 #include "g_io.h"
 
 void g_io_iniciar() {
+  gpio_iniciar();
   gpio_marcar_salida(0, 32);
+  // todos los pines a 0
   gpio_escribir(0, 32, 0);
+  // menos los de los botones (evitar interrupción al comienzo)
+  gpio_escribir(14, 2, 3);
   gpio_marcar_entrada(3, 7);
   gpio_marcar_entrada(14, 2);
   cola_encolar_msg(SET_ALARM, g_alarma_crear(LEER_ENTRADA, TRUE, 100));
