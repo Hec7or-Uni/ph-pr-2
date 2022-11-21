@@ -9,9 +9,9 @@ void g_energia_iniciar() {
 }
 
 void g_energia_power_down() {
+  estado = POWERDOWN;
   power_down();
   setup_PLL();
-  estado = NORMAL;
 }
 
 void g_energia_reset() {
@@ -34,19 +34,19 @@ void g_energia_idle() {
   idle();
 }
 
-void g_energia_tratar_evento(evento_t evento) {
-  switch (evento.ID_evento) {
-    case PULSACION:
-      g_energia_reset();
-      break;
-  }
-}
-
 void g_energia_tratar_mensaje(msg_t mensaje) {
   switch (mensaje.ID_msg) {
     case POWER_DOWN:
       g_energia_power_down();
-      cola_encolar_msg(SET_ALARM, g_alarma_crear(POWER_DOWN, FALSE, 10000));
+      break;
+    case EJECUTAR:
+      if (estado == POWERDOWN) {
+        estado = NORMAL;
+      } else {
+        cola_encolar_msg(mensaje.auxData, 0);
+      }
+    case ENTRADA_ACTUALIZADA:
+      g_energia_reset();
       break;
   }
 }

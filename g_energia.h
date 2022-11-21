@@ -11,7 +11,7 @@
 #include "power.h"
 #include "utils.h"
 
-enum estados { NORMAL, IDLE };
+enum estados { NORMAL, IDLE, POWERDOWN };
 
 /**
  *  @brief Inicializa el gestor de energía.
@@ -37,12 +37,6 @@ void g_energia_reset(void);
  * interrupción.
  */
 void g_energia_idle(void);
-
-/**
- * @brief Tratamiento de eventos del módulo del gestor de energía
- * @param evento Evento a tratar
- */
-void g_energia_tratar_evento(evento_t evento);
 
 /**
  * @brief Tratamiento de mensajes del módulo del gestor de energía

@@ -17,6 +17,8 @@ enum Mensajes {
   APAGAR_REALIZADA,
   JUGAR,
   COMPROBACION_REALIZADA,
+  EJECUTAR,  // auxData := mensaje a encolar
+  ENTRADA_ACTUALIZADA,
 
   RESET,
   FIN,

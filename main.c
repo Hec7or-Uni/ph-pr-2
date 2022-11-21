@@ -22,7 +22,6 @@ int main(void) {
     if (hay_evento) {
       evento_t evento = cola_desencolar_eventos();
       g_alarma_tratar_evento(evento);
-      g_energia_tratar_evento(evento);
       g_io_tratar_evento(evento);
       g_boton_tratar_evento(evento);
     }

@@ -62,6 +62,7 @@ void g_io_tratar_evento(evento_t evento) {
 }
 
 void g_io_tratar_mensaje(msg_t mensaje) {
+  static uint32_t entrada_anterior, entrada;
   switch (mensaje.ID_msg) {
     case RESET:
       g_io_iniciar();
@@ -73,7 +74,12 @@ void g_io_tratar_mensaje(msg_t mensaje) {
       g_io_apagar_latido();
       break;
     case LEER_ENTRADA:
-      cola_encolar_msg(VALIDAR_ENTRADA, g_io_leer_entrada());
+      entrada = g_io_leer_entrada();
+      if (entrada != entrada_anterior) {
+        cola_encolar_msg(ENTRADA_ACTUALIZADA, 0);
+      }
+      entrada_anterior = entrada;
+      cola_encolar_msg(VALIDAR_ENTRADA, entrada);
       break;
     case ENTRADA_VALIDADA:
       if (mensaje.auxData)
