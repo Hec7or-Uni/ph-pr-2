@@ -7,7 +7,7 @@
 #include "temporizador.h"
 #include "utils.h"
 
-enum { COLA_MSG_SIZE = 32 };
+enum { COLA_MSG_SIZE = 16 };
 
 typedef struct msg_t {
   uint32_t timestamp;

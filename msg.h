@@ -2,7 +2,6 @@
 #define MSG_H
 
 enum Mensajes {
-  INICIO,
   SET_ALARM,  // auxData := 8 bits ID:1 bit esPeriodica:23 bits retardo
   BAJAR_PULSACION_1,
   BAJAR_PULSACION_2,
