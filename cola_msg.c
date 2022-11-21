@@ -2,6 +2,7 @@
 
 static uint8_t first = 0, last = 0, full = FALSE;
 static uint32_t colaDATA[COLA_MSG_SIZE];
+static uint32_t colaTIME[COLA_MSG_SIZE];
 static uint8_t colaID[COLA_MSG_SIZE];
 
 void cola_encolar_msg(uint8_t ID_msg, uint32_t auxData) {
@@ -13,6 +14,7 @@ void cola_encolar_msg(uint8_t ID_msg, uint32_t auxData) {
     colaID[last] = OVERFLOW_M;
   } else {
     colaDATA[last] = auxData;
+    colaTIME[last] = temporizador_leer();
     colaID[last] = ID_msg;
   }
   last++;
@@ -28,6 +30,7 @@ msg_t cola_desencolar_msg(void) {
     first = 0;
   }
 
+  msg.timestamp = colaTIME[first];
   msg.auxData = colaDATA[first];
   msg.ID_msg = colaID[first];
   first++;

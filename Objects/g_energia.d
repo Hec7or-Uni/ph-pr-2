@@ -9,6 +9,6 @@
 .\objects\g_energia.o: C:\Keil_v5\ARM\INC\Philips\LPC210x.H
 .\objects\g_energia.o: utils.h
 .\objects\g_energia.o: cola_msg.h
-.\objects\g_energia.o: g_alarmas.h
 .\objects\g_energia.o: temporizador.h
+.\objects\g_energia.o: g_alarmas.h
 .\objects\g_energia.o: power.h

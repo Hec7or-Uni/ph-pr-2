@@ -1,14 +1,5 @@
 #include "temporizador.h"
 
-// para la memoria
-// volatile uint32_t timer1_extra;
-// void timer1_IRC(void) __irq
-// {
-// 	timer1_extra++;
-// 	T1IR = 1;				 // Clear interrupt flag
-// 	VICVectAddr = 0; // Acknowledge Interrupt
-// }
-
 void timer0_IRC(void) __irq {
   static int veces = 0;
   cola_encolar_eventos(TEMPORIZADOR, ++veces, 0);
@@ -17,23 +8,13 @@ void timer0_IRC(void) __irq {
 }
 
 void temporizador_iniciar() {
-  // timer1_extra = 0;
-
-  T1PR = 14;  // Cuenta cada microsegundo: 15 clk = 1 us (SE PONE 2 PORQUE ES 15
-              // - 1) ;
-  T1MR0 = UINT32_MAX;  // Por si queremos un dominio mayor, de varios miles de
-                       // años en lugar de una hora
+  T1PR = 14;           // Cuenta cada microsegundo: 15 clk = 1 us
+  T1MR0 = UINT32_MAX;  // Para que cuente el máximo numero de microsegundos
+                       // antes de reiniciarse
 
   T1MCR = 2;  // Reset on MR0
-  // T1MCR = 3; // Interrumpe cada MR0 y reinicia el contador
 
-  // contador a 0
   T1TCR = T1TCR & ~0x1;
-
-  // No es necesario si solo se devuelve unint32_t
-  // VICVectAddr1 = (unsigned long)timer1_IRC;
-  // VICVectCntl1 = (VICVectCntl0 & 0x1ff)  | 0x25;
-  // VICIntEnable = VICIntEnable | 0x00000020; // Enable Timer1 Interrupt.
 }
 
 void temporizador_empezar() {
@@ -42,12 +23,7 @@ void temporizador_empezar() {
   T1TCR = T1TCR | 0x1;  // comienza a contar
 }
 
-uint32_t temporizador_leer() {
-  // Con 64 bits para microsegundos:
-  // return ((uint64_t)timer1_extra << 32) + T1TC;
-  // Con 32 bits:
-  return T1TC;
-}
+uint32_t temporizador_leer() { return T1TC; }
 
 uint32_t temporizador_parar() {
   uint32_t time = T1TC;
@@ -68,7 +44,6 @@ void temporizador_reloj(int periodo) {
                                       // los bits 31:6 estan reservados
   VICIntEnable = VICIntEnable | 0x00000010;  // Enable Timer0 Interrupt.
 
-  // contador a 0
   T0TCR = T0TCR & ~0x1;
   T0PC = 0;
   T0TC = 0;

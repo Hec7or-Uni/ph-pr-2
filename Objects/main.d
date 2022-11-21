@@ -8,10 +8,10 @@
 .\objects\main.o: C:\Keil_v5\ARM\INC\Philips\LPC210x.H
 .\objects\main.o: utils.h
 .\objects\main.o: cola_msg.h
+.\objects\main.o: temporizador.h
 .\objects\main.o: conecta4_2022.h
 .\objects\main.o: celda.h
 .\objects\main.o: g_alarmas.h
-.\objects\main.o: temporizador.h
 .\objects\main.o: g_boton.h
 .\objects\main.o: g_energia.h
 .\objects\main.o: power.h

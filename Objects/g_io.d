@@ -9,6 +9,6 @@
 .\objects\g_io.o: semaforo_interrupciones.h
 .\objects\g_io.o: utils.h
 .\objects\g_io.o: cola_msg.h
-.\objects\g_io.o: g_alarmas.h
 .\objects\g_io.o: temporizador.h
+.\objects\g_io.o: g_alarmas.h
 .\objects\g_io.o: gpio.h

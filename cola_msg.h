@@ -4,11 +4,13 @@
 
 #include "eventos.h"
 #include "msg.h"
+#include "temporizador.h"
 #include "utils.h"
 
 enum { COLA_MSG_SIZE = 32 };
 
 typedef struct msg_t {
+  uint32_t timestamp;
   uint32_t auxData;
   uint8_t ID_msg;
 } msg_t;
