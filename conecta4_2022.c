@@ -130,22 +130,17 @@ __attribute__((noinline)) uint8_t conecta4_hay_linea_c_arm(
   uint8_t linea = FALSE;
   uint8_t long_linea = 0;
 
-  // buscar linea en fila, columna y 2 diagonales
-  for (i = 0; (i < 4) && (linea == FALSE);
-       ++i) {  // Cambiar el orden de la comprobación
-    // buscar sentido
+  for (i = 0; (i < 4) && (linea == FALSE); ++i) {
     long_linea = conecta4_buscar_alineamiento_arm(
         cuadricula, fila, columna, color, deltas_fila[i], deltas_columna[i]);
     linea = long_linea >= 4;
     if (linea) {
-      continue;  // return TRUE¿¿??;
+      continue;
     }
-    // buscar sentido inverso
     long_linea += conecta4_buscar_alineamiento_arm(
         cuadricula, fila - deltas_fila[i], columna - deltas_columna[i], color,
         -deltas_fila[i], -deltas_columna[i]);
     linea = long_linea >= 4;
-    // return condicional se podria?
   }
   return linea;
 }
@@ -194,7 +189,7 @@ static CELDA tablero[7][8] = {
     0, 0,    0,    0,    0XF4, 0,    0,    0,    0,    0, 0,    0, 0XF5, 0,
     0, 0,    0,    0,    0,    0,    0XF6, 0,    0,    0, 0,    0, 0,    0};
 
-void C4_iniciar() {
+void conecta4_iniciar() {
   color = 1;
   cola_encolar_msg(JUGADOR, color);
   for (int i = 1; i <= NUM_FILAS; i++) {
@@ -217,10 +212,9 @@ void C4_validar(uint8_t columna) {
     if (ok) {
       C4_actualizar_tablero(tablero, fila, columna, color);
       cola_encolar_msg(JUGADA_REALIZADA, 0);
-      // medir el tiempo -> mensaje al gestor de alarma o directamente usar el
-      // temporizador??
       int fin = conecta4_hay_linea_arm_arm(tablero, fila, columna, color) ||
                 C4_comprobar_empate(tablero);
+      cola_encolar_msg(COMPROBACION_REALIZADA, 0);
       if (fin) {
         cola_encolar_msg(FIN, fin);
         estado = C4_FIN;
@@ -243,16 +237,21 @@ void C4_jugar() {
 }
 
 void conecta4_tratar_mensaje(msg_t mensaje) {
+  static volatile uint32_t tiempo_inicial, tiempo_final, tiempo_total;
   switch (mensaje.ID_msg) {
-    case INICIO:
     case RESET:
-      C4_iniciar();
+      conecta4_iniciar();
       break;
     case VALIDAR_ENTRADA:
       C4_validar(mensaje.auxData);
       break;
     case JUGAR:
       C4_jugar();
+      tiempo_inicial = mensaje.timestamp;
+      break;
+    case COMPROBACION_REALIZADA:
+      tiempo_final = mensaje.timestamp;
+      tiempo_total = tiempo_final - tiempo_inicial;
       break;
   }
 }

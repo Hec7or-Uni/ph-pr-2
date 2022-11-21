@@ -52,6 +52,11 @@ int g_alarma_es_periodica(alarma_t alarma);
 uint8_t g_alarma_id_msg(alarma_t alarma);
 
 /**
+ * @brief Iinicia el gestor de alarmas y los temporizadores
+ */
+void g_alarma_iniciar(void);
+
+/**
  * @brief Si hay espacio, añade la alarma al conjunto de alarmas.
  *  Si la alarma ya estaba programada la reprograma con la nueva información.
  *  Si el retardo de la alarma es de 0ms la borra del conjunto.

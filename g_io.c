@@ -1,8 +1,12 @@
 #include "g_io.h"
 
 void g_io_iniciar() {
+  gpio_iniciar();
   gpio_marcar_salida(0, 32);
+  // todos los pines a 0
   gpio_escribir(0, 32, 0);
+  // menos los de los botones (evitar interrupción al comienzo)
+  gpio_escribir(14, 2, 3);
   gpio_marcar_entrada(3, 7);
   gpio_marcar_entrada(14, 2);
   cola_encolar_msg(SET_ALARM, g_alarma_crear(LEER_ENTRADA, TRUE, 100));
@@ -54,13 +58,11 @@ void g_io_tratar_evento(evento_t evento) {
       g_io_overflow();
       while (1)
         ;
-      // break;
   }
 }
 
 void g_io_tratar_mensaje(msg_t mensaje) {
   switch (mensaje.ID_msg) {
-    case INICIO:
     case RESET:
       g_io_iniciar();
       break;
@@ -95,6 +97,5 @@ void g_io_tratar_mensaje(msg_t mensaje) {
       g_io_overflow();
       while (1)
         ;
-      // break;
   }
 }

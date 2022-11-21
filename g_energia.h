@@ -14,6 +14,11 @@
 enum estados { NORMAL, IDLE };
 
 /**
+ *  @brief Inicializa el gestor de energía.
+ */
+void g_energia_iniciar(void);
+
+/**
  * @brief Pone al procesador a dormir.
  * En el estado power-down los periféricos también entran en bajo consumo y
  * dejan de funcionar pero se sigue manteniendo el estado.

@@ -4,6 +4,10 @@ static int estado = NORMAL;
 
 void setup_PLL(void);
 
+void g_energia_iniciar() {
+  cola_encolar_msg(SET_ALARM, g_alarma_crear(POWER_DOWN, FALSE, 10000));
+}
+
 void g_energia_power_down() {
   power_down();
   setup_PLL();
@@ -40,9 +44,6 @@ void g_energia_tratar_evento(evento_t evento) {
 
 void g_energia_tratar_mensaje(msg_t mensaje) {
   switch (mensaje.ID_msg) {
-    case INICIO:
-      cola_encolar_msg(SET_ALARM, g_alarma_crear(POWER_DOWN, FALSE, 10000));
-      break;
     case POWER_DOWN:
       g_energia_power_down();
       cola_encolar_msg(SET_ALARM, g_alarma_crear(POWER_DOWN, FALSE, 10000));

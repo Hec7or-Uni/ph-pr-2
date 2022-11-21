@@ -24,6 +24,12 @@ int g_alarma_es_periodica(alarma_t alarma) { return (alarma & 0x800000) != 0; }
 
 uint8_t g_alarma_id_msg(alarma_t alarma) { return alarma >> 24; }
 
+void g_alarma_iniciar() {
+  temporizador_reloj(1);
+  temporizador_iniciar();
+  temporizador_empezar();
+}
+
 void g_alarma_programar(alarma_t alarma) {
   // Buscar si hay que reprogramarla
   for (int i = 0; i < NUM_ALARMAS; i++) {
@@ -75,9 +81,7 @@ void g_alarma_tratar_evento(evento_t evento) {
 
 void g_alarma_tratar_mensaje(msg_t mensaje) {
   switch (mensaje.ID_msg) {
-    case INICIO:
-      temporizador_reloj(1);
-      temporizador_iniciar();
+    case RESET:
       temporizador_empezar();
       break;
     case SET_ALARM:

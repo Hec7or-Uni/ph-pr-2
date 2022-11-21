@@ -18,9 +18,6 @@ void g_boton_tratar_evento(evento_t evento) {
 
 void g_boton_tratar_mensaje(msg_t mensaje) {
   switch (mensaje.ID_msg) {
-    case INICIO:
-      botones_iniciar();
-      break;
     case BAJAR_PULSACION_1:
       if (!boton1_pulsado()) {
         boton1_reset();
@@ -35,3 +32,5 @@ void g_boton_tratar_mensaje(msg_t mensaje) {
       break;
   }
 }
+
+void g_boton_iniciar(void) { botones_iniciar(); }

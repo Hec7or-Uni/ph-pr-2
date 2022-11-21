@@ -18,4 +18,9 @@ void g_boton_tratar_evento(evento_t evento);
  */
 void g_boton_tratar_mensaje(msg_t mensaje);
 
+/**
+ * @brief Inicialización del módulo del gestor de botones.
+ */
+void g_boton_iniciar(void);
+
 #endif

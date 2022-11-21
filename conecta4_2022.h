@@ -18,31 +18,39 @@ enum {
   TAM_COLS = PADDING_COL + NUM_COLUMNAS
 };
 
-/* *****************************************************************************
- * declaracion de funciones visibles en el exterior conecta4_
- */
+/* declaracion de funciones visibles en el exterior conecta4*/
 
-// devuelve la longitud de la línea más larga
+/**
+ * @brief devuelve la longitud de la línea más larga
+ */
 uint8_t conecta4_buscar_alineamiento_c(CELDA cuadricula[TAM_FILS][TAM_COLS],
                                        uint8_t fila, uint8_t columna,
                                        uint8_t color, int8_t delta_fila,
                                        int8_t delta_columna);
 
-// devuelve la longitud de la línea más larga
+/**
+ * @brief devuelve la longitud de la línea más larga
+ */
 uint8_t conecta4_buscar_alineamiento_arm(CELDA cuadricula[TAM_FILS][TAM_COLS],
                                          uint8_t fila, uint8_t columna,
                                          uint8_t color, int8_t delta_fila,
                                          int8_t delta_columna);
 
-// devuelve true si encuentra una línea de longitud mayor o igual a 4
+/**
+ * @brief devuelve true si encuentra una línea de longitud mayor o igual a 4
+ */
 uint8_t conecta4_hay_linea_c_c(CELDA cuadricula[TAM_FILS][TAM_COLS],
                                uint8_t fila, uint8_t columna, uint8_t color);
 
-// devuelve true si encuentra una línea de longitud mayor o igual a 4
+/**
+ * @brief devuelve true si encuentra una línea de longitud mayor o igual a 4
+ */
 uint8_t conecta4_hay_linea_arm_c(CELDA cuadricula[TAM_FILS][TAM_COLS],
                                  uint8_t fila, uint8_t columna, uint8_t color);
 
-// devuelve true si encuentra una línea de longitud mayor o igual a 4
+/**
+ * @brief Devuelve true si encuentra una línea de longitud mayor o igual a 4
+ */
 uint8_t conecta4_hay_linea_arm_arm(CELDA cuadricula[TAM_FILS][TAM_COLS],
                                    uint8_t fila, uint8_t columna,
                                    uint8_t color);
@@ -50,9 +58,7 @@ uint8_t conecta4_hay_linea_arm_arm(CELDA cuadricula[TAM_FILS][TAM_COLS],
 // Tratamiento de mensajes del módulo de conecta 4.
 void conecta4_tratar_mensaje(msg_t mensaje);
 
-/* *****************************************************************************
- * declaración funciones internas C4_
- */
+/* declaración funciones internas */
 
 uint8_t C4_calcular_fila(CELDA cuadricula[TAM_FILS][TAM_COLS], uint8_t columna);
 
@@ -76,13 +82,19 @@ static inline uint8_t C4_fila_valida(uint8_t fila) {
   return (fila >= 1) && (fila <= NUM_FILAS);
 }
 
-// Reacción del juego ante un evento INICIO o RESET
-void C4_iniciar(void);
+/**
+ * @brief Inicializa el módulo de juego de conecta4
+ */
+void conecta4_iniciar(void);
 
-// Reacción del juego ante un evento VALIDAR_ENTRADA
+/**
+ * @brief Reacción del juego ante un evento VALIDAR_ENTRADA
+ */
 void C4_validar(uint8_t columna);
 
-// Reacción del juego ante un evento JUGAR
+/**
+ * @brief Reacción del juego ante un evento JUGAR
+ */
 void C4_jugar(void);
 
 #endif /* CONECTA4_H_2022 */
