@@ -6,6 +6,27 @@
 #include "g_energia.h"
 #include "g_io.h"
 
+/**
+ * @brief Función que prueba la respuesta del sistema ante el overflow
+ * @param case 1: Test Overflow para la cola de eventos
+ *             2: Test Overflow para la cola de mensajes
+ *             default: No se realiza ninguna prueba
+ */
+void test_overflow(int _case) {
+  switch (_case) {
+    case 1:
+      for (int i = 0; i <= COLA_EVENTOS_SIZE; i++) {
+        cola_encolar_eventos(PULSACION, i, 0);
+      }
+      break;
+    case 2:
+      for (int i = 0; i <= COLA_MSG_SIZE; i++) {
+        cola_encolar_msg(LATIDO, 0);
+      }
+      break;
+  }
+}
+
 void init(void) {
   g_io_iniciar();
   g_boton_iniciar();
@@ -17,6 +38,7 @@ void init(void) {
 int main(void) {
   int hay_evento, hay_msg;
   init();
+  test_overflow(0);
   while (1) {
     hay_evento = cola_hay_eventos();
     if (hay_evento) {

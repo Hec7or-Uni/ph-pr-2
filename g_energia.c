@@ -12,6 +12,7 @@ void g_energia_power_down() {
   estado = POWERDOWN;
   power_down();
   setup_PLL();
+  cola_encolar_msg(SET_ALARM, g_alarma_crear(POWER_DOWN, FALSE, 10000));
 }
 
 void g_energia_reset() {

@@ -16,20 +16,20 @@ typedef struct msg_t {
 } msg_t;
 
 /**
- * @brief  Funcion que encola un mensaje a la cola de mensajes
+ * @brief  Función que encola un mensaje a la cola de mensajes
  * @param ID_msg Identificador único del mensaje
  * @param auxData Información extra sobre el mensaje
  */
 void cola_encolar_msg(uint8_t ID_msg, uint32_t auxData);
 
 /**
- * @brief  Funcion que desencola un mensaje de la cola de mensajes
+ * @brief  Función que desencola un mensaje de la cola de mensajes
  * @return Mensaje desencolado
  */
 msg_t cola_desencolar_msg(void);
 
 /**
- * @brief  Funcion que comprueba si hay mensajes
+ * @brief  Función que comprueba si hay mensajes
  * @return Número de mensajes
  */
 int cola_hay_msg(void);
