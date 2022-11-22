@@ -32,7 +32,7 @@ uint32_t temporizador_parar() {
 }
 
 void temporizador_reloj(int periodo) {
-  T0PR = 14999;  // Cuenta cada milisegundo: 15 clk = 1 us;
+  T0PR = 14999;  // Cuenta cada milisegundo: 15000 clk = 1 ms;
   T0MR0 = periodo - 1;
 
   T0MCR = 3;  // Interrumpe cada MR0 y resetea el contador
