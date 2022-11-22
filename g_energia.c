@@ -5,6 +5,7 @@ static int estado = NORMAL;
 void setup_PLL(void);
 
 void g_energia_iniciar() {
+  power_iniciar();
   cola_encolar_msg(SET_ALARM, g_alarma_crear(POWER_DOWN, FALSE, 10000));
 }
 

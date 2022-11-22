@@ -4,8 +4,13 @@
 #include <LPC210x.H> /* LPC210x definitions */
 
 /**
+ * @brief Permite que el procesador se despierte de PD.
+ */
+void power_iniciar(void);
+
+/**
  * @brief LLama a función ASM establecida en Startup.s para restablecer
- * la configuración del PLL
+ * la configuración del PLL.
  */
 void setup_PLL(void);
 
