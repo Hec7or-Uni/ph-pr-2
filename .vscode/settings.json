@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "type_traits": "c",
-        "eventos.h": "c",
-        "conecta4_2022.h": "c",
-        "inttypes.h": "c",
-        "temporizador.h": "c"
-    }
-}
