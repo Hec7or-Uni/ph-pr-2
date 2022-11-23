@@ -4,7 +4,7 @@ static uint32_t recover;
 
 void bloquear_interrupciones() {
   recover = VICIntEnable;
-  VICIntEnable = 0;
+  VICIntEnClr = UINT32_MAX;
 }
 
 void liberar_interrupciones() { VICIntEnable = recover; }
